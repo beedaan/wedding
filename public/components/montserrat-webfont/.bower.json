@@ -1,0 +1,44 @@
+{
+  "name": "montserrat-webfont",
+  "version": "1.0.0",
+  "homepage": "https://github.com/skounis/montserrat-webfont",
+  "authors": [
+    "Stavros Kounis <skounis@gmail.com>"
+  ],
+  "description": "Montserrat Webfont Bower Package",
+  "main": [
+    "./css/montserrat-webfont.css",
+    "./less/montserrat-webfont.less",
+    "./scss/montserrat-webfont.scss",
+    "./fonts/*"
+  ],
+  "keywords": [
+    "montserrat",
+    "webfont",
+    "font",
+    "gulp",
+    "gulp-flatten",
+    "css",
+    "sass",
+    "less",
+    "fontkit",
+    "sans-serif"
+  ],
+  "license": [
+    "OFL-1.1",
+    "MIT"
+  ],
+  "ignore": [
+    "**/.*"
+  ],
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.0",
+    "commit": "d780f1a6a050d910361eb80c6583355a9faa7a2b"
+  },
+  "_source": "git://github.com/skounis/montserrat-webfont.git",
+  "_target": "~1.0.0",
+  "_originalSource": "montserrat-webfont",
+  "_direct": true
+}

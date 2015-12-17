@@ -1,0 +1,33 @@
+{
+  "name": "wedding",
+  "description": "Kaitlin & Brendan's Wedding",
+  "main": "javascripts/weddingApp.js",
+  "authors": [
+    "Brendan Heussler <brendan@lifejourney.us>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "wedding"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "homepage": "http://bheussler.name",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.6",
+    "jquery-easing": "*",
+    "blueimp-bootstrap-image-gallery": "~3.1.3",
+    "blueimp-gallery": "~2.16.0",
+    "font-awesome": "~4.5.0"
+  }
+}

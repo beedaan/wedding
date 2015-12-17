@@ -1,0 +1,165 @@
+extends layout
+
+block intro
+  header.intro
+    .intro-body
+      .container
+        .row
+          .col-sm-8.col-sm-offset-2
+            h1.brand-heading Kaitlin & Brendan
+            p.intro-text(style='white-space:pre;')
+              | June 18, 2015
+              | Abino Bay, Canada
+            a(class='btn btn-circle page-scroll' href='#our_wedding')
+              i.fa.fa-angle-double-down.animated
+
+block our_wedding
+  section(id='our_wedding', class='container content-section text-center')
+    .col-lg-8.col-lg-offset-2
+      h2 Our Wedding
+      p(style='white-space:pre-wrap;')
+        | Saturday, June 18, 2015
+        | Attire: Cocktail
+      h3 Ceremony
+      p(style='white-space:pre-wrap;')
+        | Holloway Memorial Chapel
+        | 1025 Point Abino Rd S, Ridgeway, ON L0S 1N0, Canada
+      h3 Reception
+      p(style='white-space:pre-wrap;')
+        | Buffalo Canoe Club
+        | 4475 Erie Rd, Ridgeway, ON L0S 1N0, Canada
+      h2 Other Events
+      p(style='white-space:pre-wrap;')
+        | Friday, June 17 2015
+        | Buffalo Yacht Club, Point Abino Station
+        | 1007 Point Abino Rd S, Ridgeway, ON L0S 1N0, Canada
+      a(
+        class='btn btn-default btn-lg'
+        target='_blank'
+        href='https://www.google.com/maps/d/edit?mid=zDArS8xNaHXo.kwJrlap2lHOU&usp=sharing'
+      ) View Map
+
+block photos
+  section(id='photos', class='container content-section text-center')
+    .row
+      .col-lg-8.col-lg-offset-2
+        h2 Photos
+        .row
+          .col-sm-4
+            a(href='images/LHP-84.JPG', data-gallery)
+              img(class='img-responsive img-rounded', src='images/LHP-84.JPG')
+          .col-sm-4
+            a(href='images/LHP-78.JPG', data-gallery)
+              img(class='img-responsive img-rounded', src='images/LHP-78.JPG')
+          .col-sm-4
+            a(href='images/LHP-7.JPG', data-gallery)
+              img(class='img-responsive img-rounded', src='images/LHP-7.JPG')
+        .row
+          .col-sm-4
+            a(href='images/LHP-45.JPG', data-gallery)
+              img(class='img-responsive img-rounded', src='images/LHP-45-landscape.JPG')
+          .col-sm-4
+            a(href='images/LHP-131.JPG', data-gallery)
+              img(class='img-responsive img-rounded', src='images/LHP-131.JPG')
+          .col-sm-4
+            a(href='images/LHP-39.JPG', data-gallery)
+              img(class='img-responsive img-rounded', src='images/LHP-39.JPG')
+
+  // The Bootstrap Image Gallery lightbox, should be a child element of the document body
+  div(id='blueimp-gallery', class='blueimp-gallery', data-use-bootstrap-modal='false')
+    // The container for the model slides
+    .slides
+    // Controls for the borderless lightbox
+    h3.title
+    a.prev ‹
+    a.next ›
+    a.close ×
+    a.play-pause
+    ol.indicator
+    // The modal dialog, which will be used to wrap the lightbox content
+    .modal.fade
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button(type='button', class='close', aria-hidden='true') $times;
+            h4.modal-title
+          .modal-body.next
+          .modal-footer
+            button(type='button', class='btn btn-default pull-left prev')
+              i.fa.fa-chevron-left
+              | Previous
+            button(type='button', class='btn btn-primary next')
+              | Next
+              i.fa.fa-chevron-right
+
+block details
+  section(id='details', class='container content-section text-center')
+    .row
+      .col-lg-8.col-lg-offset-2
+        h2 Details
+        h3 Accommodations
+        .row
+          .col-sm-6
+            h4 The Clarion Hotel
+            a(
+              class='btn btn-default btn-lg'
+              target='_blank'
+              href='http://www.choicehotels.ca/en/clarion-hotel-&-conference-centre-fort-erie-hotel-cn965?promo=gglocalcaen'
+            ) Visit Website
+          .col-sm-6
+            h4 Crystal Beach Motel
+            a(
+              class='btn btn-default btn-lg'
+              target='_blank'
+              href='http://www.crystalbeachmotel.com/'
+            ) Visit Website
+        h3 Travel
+        p
+          | The closest airport is Buffalo Niagara International Airport.
+          | It is 15 minutes from the U.S./Canadian border at the Peace Bridge.
+          | Once you are over the border, the venue itself is another 20 minutes.
+          a(href='https://www.niagaraairbus.com/Default.aspx', target='_blank') The Niagara Airbus
+          | provides shuttle bus service from the Buffalo Airport to Fort Erie, Canada.
+        p
+          | U.S. and Canadian currencies are accepted at the toll at the Canadian Border as well as EZ Pass.
+          | U.S. currency is accepted at most stores and restaurants in the area, but usually not at par.
+        h3 Things to Do
+        h4 Niagara Falls
+        p
+          | The Canadian side of Niagara Falls is a 20 minute drive from the Clarion Hotel.
+          | If you have time (or if your a gambler!), the world class attraction is worth a visit.
+        h4 Crystal Beach
+        p
+          | If you are a beach goer, then you will be able to enjoy beautiful Crystal Beach.
+          | The Heussler's will have several activities set up at their house including beach volleyball.
+
+block registry
+  section(id='registry', class='container-fluid content-section text-center')
+    .row
+      .col-lg-8.col-lg-offset-2
+        h2 Registry
+        .registry-links.row
+          ul.list-inline.banner-social-buttons
+            li
+              // TODO put actual registry links in
+              a(
+                class='btn btn-default btn-lg'
+              )
+                i.fa.fa-fw.fa-font
+                | Anthropologie
+            li
+              a(
+                class='btn btn-default btn-lg'
+              )
+                i.fa.fa-fw.fa-cutlery
+                | Crate & Barrel
+            li
+              a(
+                class='btn btn-default btn-lg'
+              )
+                i.fa.fa-fw.fa-star
+                | Macy's
+
+block footer
+  footer(class='content-section text-center')
+    img(class='img-responsive', style='width: 100%;', src='images/LHP-120-wide.JPG')

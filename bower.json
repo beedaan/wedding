@@ -31,6 +31,8 @@
     "font-awesome": "~4.5.0",
     "typopro-web": "~3.4.1",
     "montserrat-webfont": "~1.0.0",
-    "angular-strap": "~2.3.6"
+    "angular-strap": "~2.3.6",
+    "angular-motion": "~0.4.3",
+    "angular-animate": "~1.4.8"
   }
 }

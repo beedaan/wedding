@@ -1,8 +1,5 @@
-var weddingApp = angular.module('weddingApp', ['mgcrea.ngStrap.scrollspy', 'mgcrea.ngStrap.helpers.dimensions'])
+var weddingApp = angular.module('weddingApp', ['ngAnimate', 'mgcrea.ngStrap'])
     .controller('mainController', ['$scope', '$log',
         function ($scope, $log) {
-            $scope.test = 'test';
-
-            $log.debug('testing');
-        }])
-    .directive();
+            $log.debug('loaded');
+        }]);

@@ -15,19 +15,20 @@ html(ng-app='weddingApp')
     link(rel='stylesheet', href='components/font-awesome/css/font-awesome.min.css')
     link(rel='stylesheet', href='components/blueimp-gallery/css/blueimp-gallery.min.css')
     link(rel='stylesheet', href='components/blueimp-bootstrap-image-gallery/css/bootstrap-image-gallery.min.css')
+    link(rel='stylesheet', href='components/angular-motion/dist/angular-motion.min.css')
 
     link(rel='stylesheet', href='/stylesheets/css/style.css')
 
   body(id='page-top', data-target='.navbar-fixed-top', ng-controller='mainController')
-    nav(class='navbar navbar-custom navbar-fixed-top', role='navigation')
+    nav(class='navbar navbar-custom navbar-fixed-top', role='navigation', bs-collapse, start-collapsed='true')
       .container
         .navbar-header
-          button(type='button', class='navbar-toggle', data-toggle='collapse', data-target='.navbar-main-collapse')
+          button(type='button', class='navbar-toggle', bs-collapse-toggle)
             i.fa.fa-bars
           a(class='navbar-brand page-scroll', href='#page-top')
             span.light Kaitlin <i class="fa fa-anchor"></i> Brendan
 
-        div(class='collapse navbar-collapse navbar-left navbar-main-collapse')
+        div(class='navbar-collapse navbar-left', bs-collapse-target)
           ul(class='nav navbar-nav', bs-scrollspy-list)
             li.hidden
               a(href='#page-top')
@@ -51,6 +52,7 @@ html(ng-app='weddingApp')
     script(src='components/jquery/dist/jquery.min.js')
     script(src='components/jquery-easing/jquery.easing.min.js')
     script(src='components/angular/angular.min.js')
+    script(src='components/angular-animate/angular-animate.min.js')
     // TODO Remove bootstrap.min altogether
     //script(src='components/bootstrap/dist/js/bootstrap.min.js')
     script(src='components/angular-strap/dist/angular-strap.min.js')

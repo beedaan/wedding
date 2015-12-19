@@ -4,6 +4,7 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+// TODO put this in angular directive
 // jQuery to collapse the navbar on scroll
 $(window).scroll(function() {
     if ($(".navbar").offset().top > 50) {
@@ -13,6 +14,7 @@ $(window).scroll(function() {
     }
 });
 
+// TODO have angular handle scrolling
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
@@ -24,7 +26,8 @@ $(function() {
     });
 });
 
-// Closes the Responsive Menu on Menu Item Click
+// TODO put this in angular directive
+//// Closes the Responsive Menu on Menu Item Click
 $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });

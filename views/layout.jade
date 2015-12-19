@@ -11,8 +11,8 @@ html(ng-app='weddingApp')
 
     link(rel='stylesheet', href='components/montserrat-webfont/css/montserrat-webfont.min.css')
     link(rel='stylesheet', href='components/typopro-web/web/TypoPRO-Lora/TypoPRO-Lora.css')
-    link(rel='stylesheet', href='components/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='components/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='components/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='components/blueimp-gallery/css/blueimp-gallery.min.css')
     link(rel='stylesheet', href='components/blueimp-bootstrap-image-gallery/css/bootstrap-image-gallery.min.css')
     link(rel='stylesheet', href='components/angular-motion/dist/angular-motion.min.css')
@@ -20,7 +20,7 @@ html(ng-app='weddingApp')
     link(rel='stylesheet', href='/stylesheets/css/style.css')
 
   body(id='page-top', data-target='.navbar-fixed-top', ng-controller='mainController')
-    nav(class='navbar navbar-custom navbar-fixed-top', role='navigation', bs-collapse, start-collapsed='true')
+    nav(class='navbar navbar-custom navbar-fixed-top', role='navigation', bs-collapse, data-start-collapsed='true')
       .container
         .navbar-header
           button(type='button', class='navbar-toggle', bs-collapse-toggle)

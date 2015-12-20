@@ -35,7 +35,7 @@ html(ng-app='weddingApp')
               a(href='#page-top')
             li
               //TODO Replace links with variables
-              a(scroll-to="#our_wedding", ng-click='activeCollapse = -1') Our Wedding
+              a(class='page-scroll', href='#our_wedding', ng-click='activeCollapse = -1') Our Wedding
             li
               a(class='page-scroll', href='#photos', ng-click='activeCollapse = -1') Photos
             li
@@ -58,7 +58,6 @@ html(ng-app='weddingApp')
     script(src='components/angular-animate/angular-animate.min.js')
     script(src='components/angular-strap/dist/angular-strap.min.js')
     script(src='components/angular-strap/dist/angular-strap.tpl.min.js')
-    script(src='components/ngSmoothScroll/dist/angular-smooth-scroll.min.js')
     script(src='components/blueimp-gallery/js/blueimp-gallery.min.js')
     script(src='components/blueimp-bootstrap-image-gallery/js/bootstrap-image-gallery.min.js')
 

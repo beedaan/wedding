@@ -6,7 +6,7 @@ block intro
       .container
         .row
           .col-sm-8.col-sm-offset-2
-            h1.brand-heading Kaitlin & Brendan
+            h1.brand-heading Kaitlin&nbsp;& Brendan
             p.intro-text(style='white-space:pre;')
               | June 18, 2015
               | Abino Bay, Canada
@@ -22,11 +22,11 @@ block our_wedding
         | Attire: Cocktail
       h3 Ceremony
       p(style='white-space:pre-wrap;')
-        | Holloway Memorial Chapel
+        a(href='http://www.hollowaymemorialchapel.org/' target='_blank') Holloway Memorial Chapel<br>
         | 1025 Point Abino Rd S, Ridgeway, ON L0S 1N0, Canada
       h3 Reception
       p(style='white-space:pre-wrap;')
-        | Buffalo Canoe Club
+        a(href='https://www.buffalocanoeclub.com/Home.aspx', target='_blank') Buffalo Canoe Club<br>
         | 4475 Erie Rd, Ridgeway, ON L0S 1N0, Canada
       h2 Other Events
       h3 Rehearsal Dinner
@@ -66,6 +66,7 @@ block photos
             a(href='images/LHP-39.JPG', data-gallery)
               img(class='img-responsive img-rounded', src='images/LHP-39.JPG')
 
+  // TODO get the Image Gallery working again
   // The Bootstrap Image Gallery lightbox, should be a child element of the document body
   div(id='blueimp-gallery', class='blueimp-gallery', data-use-bootstrap-modal='false')
     // The container for the model slides
@@ -132,7 +133,7 @@ block details
           a(href='https://www.niagaraairbus.com/Default.aspx', target='_blank') The Niagara Airbus&nbsp;
           | provides a shuttle bus service from the Buffalo Airport to Fort Erie, Canada.
           | Bridge traffic can vary, so please allow time to cross the border.&nbsp;
-          a(href='http://mobile.peacebridge.com/') The Peace Bridge Authority&nbsp;
+          a(href='http://mobile.peacebridge.com/', target='_blank') The Peace Bridge Authority&nbsp;
           | provides real-time data for traffic wait times.
         p
           | The Toronto Pearson International Airport (YYZ) is an hour and a half drive from the wedding venues.

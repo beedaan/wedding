@@ -17,7 +17,7 @@ html(ng-app='weddingApp')
     link(rel='stylesheet', href='components/blueimp-bootstrap-image-gallery/css/bootstrap-image-gallery.min.css')
     link(rel='stylesheet', href='components/angular-motion/dist/angular-motion.min.css')
 
-    link(rel='stylesheet', href='/stylesheets/css/style.css')
+    link(rel='stylesheet', href='/stylesheets/css/wedding-theme.css')
 
   body(id='page-top', data-target='.navbar-fixed-top', ng-controller='mainController')
     nav(class='navbar navbar-custom navbar-fixed-top', role='navigation', bs-collapse, data-start-collapsed='true')
@@ -28,7 +28,7 @@ html(ng-app='weddingApp')
           a(class='navbar-brand page-scroll', href='#page-top')
             span.light Kaitlin <i class="fa fa-anchor"></i> Brendan
 
-        div(class='navbar-collapse navbar-left', ng-cloak, bs-collapse-target)
+        div(class='navbar-collapse navbar-right', ng-cloak, bs-collapse-target)
           ul(class='nav navbar-nav', bs-scrollspy-list)
             li.hidden
               a(href='#page-top')

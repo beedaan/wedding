@@ -1,4 +1,4 @@
-angular.module('weddingApp.directives', ['ngAnimate', 'mgcrea.ngStrap'])
+angular.module('weddingApp.directives', ['ngAnimate', 'mgcrea.ngStrap.collapse'])
     .directive('topSpy', function ($window) {
         return {
             link: function (scope) {

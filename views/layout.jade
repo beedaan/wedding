@@ -19,30 +19,8 @@ html(ng-app='weddingApp')
 
     link(rel='stylesheet', href='/stylesheets/css/wedding-theme.css')
 
-  body(id='page-top', data-target='.navbar-fixed-top', ng-controller='mainController')
-    nav(class='navbar navbar-custom navbar-fixed-top', role='navigation',
-      bs-collapse, data-ng-model='activeCollapse', ng-class="{'top-nav-collapse': atTop}", top-spy)
-      .container
-        .navbar-header
-          button(type='button', class='navbar-toggle', bs-collapse-toggle)
-            i.fa.fa-bars
-          a(class='navbar-brand page-scroll', href='#page-top')
-            span.light Kaitlin <i class="fa fa-anchor"></i> Brendan
-
-        div(class='navbar-collapse navbar-right', ng-cloak, bs-collapse-target)
-          ul(class='nav navbar-nav', bs-scrollspy-list)
-            li.hidden
-              a(href='#page-top')
-            li
-              //TODO Replace links with variables
-              a(class='page-scroll', href='#our_wedding', ng-click='activeCollapse = -1') Our Wedding
-            li
-              a(class='page-scroll', href='#photos', ng-click='activeCollapse = -1') Photos
-            li
-              a(class='page-scroll', href='#details', ng-click='activeCollapse = -1') Details
-            li
-              a(class='page-scroll', href='#registry', ng-click='activeCollapse = -1') Registry
-
+  body(id='page-top', ng-controller='mainController')
+    block nav
     block intro
     block our_wedding
     block photos

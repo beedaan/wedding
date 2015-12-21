@@ -1,0 +1,10 @@
+.modal(tabindex='-1', role='dialog', aria-hidden='true')
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button(type='button', class='close', aria-label='Close', ng-click='$hide()')
+            span(aria-hidden='true') &times;
+          h4.modal-title The title of my modal
+        .modal-body The context of my modal
+        .modal-footer
+          button(type='button' class='btn btn-default', ng-click='$hide()') Close

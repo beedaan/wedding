@@ -19,28 +19,5 @@ html(ng-app='weddingApp')
 
     link(rel='stylesheet', href='/stylesheets/css/wedding-theme.css')
 
-  body(id='page-top', ng-controller='AppCtrl')
-    block nav
-    block intro
-    block our_wedding
-    block photos
-    block details
-    block registry
-    block footer
-
-    // TODO Remove All JQuery
-    script(src='components/jquery/dist/jquery.min.js')
-    script(src='components/jquery-easing/jquery.easing.min.js')
-    script(src='components/blueimp-gallery/js/blueimp-gallery.min.js')
-    script(src='components/blueimp-bootstrap-image-gallery/js/bootstrap-image-gallery.min.js')
-    script(src='javascripts/grayscale.js')
-
-    script(src='components/angular/angular.min.js')
-    script(src='components/angular-animate/angular-animate.min.js')
-    script(src='components/angular-route/angular-route.min.js')
-    script(src='components/angular-strap/dist/angular-strap.min.js')
-    script(src='components/angular-strap/dist/angular-strap.tpl.min.js')
-
-    script(src='javascripts/app.js')
-    script(src='javascripts/controllers.js')
-    script(src='javascripts/directives.js')
+  body
+    block body

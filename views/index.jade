@@ -1,232 +1,244 @@
 extends layout
 
-block nav
-  nav(class='navbar navbar-custom navbar-fixed-top', role='navigation',
-  bs-collapse, data-ng-model='activeCollapse', ng-class="{'top-nav-collapse': atTop}", top-spy)
-    .container
-      .navbar-header
-        button(type='button', class='navbar-toggle', bs-collapse-toggle)
-          i.fa.fa-bars
-        a(class='navbar-brand page-scroll', href='#page-top')
-          span.light Kaitlin <i class="fa fa-anchor"></i> Brendan
-
-      div(class='navbar-collapse navbar-right', ng-cloak, bs-collapse-target)
-        ul(class='nav navbar-nav', bs-scrollspy-list)
-          li.hidden
-            a(href='#page-top')
-          li
-            //TODO Replace links with variables
-            a(class='page-scroll', href='#our_wedding', ng-click='activeCollapse = -1') Our Wedding
-          li
-            a(class='page-scroll', href='#photos', ng-click='activeCollapse = -1') Photos
-          li
-            a(class='page-scroll', href='#details', ng-click='activeCollapse = -1') Details
-          li
-            a(class='page-scroll', href='#registry', ng-click='activeCollapse = -1') Registry
-
-block intro
-  header.intro
-    .intro-body
+block body
+  div(id='page-top', ng-controller='AppCtrl')
+    nav(class='navbar navbar-custom navbar-fixed-top', role='navigation',
+      bs-collapse, data-ng-model='activeCollapse', ng-class="{'top-nav-collapse': atTop}", top-spy)
       .container
-        .row
-          .col-sm-8.col-sm-offset-2
-            h1.brand-heading Kaitlin&nbsp;& Brendan
-            p.intro-text(style='white-space:pre;')
-              | June 18, 2015
-              | Abino Bay, Canada
-            a(class='btn btn-circle page-scroll' href='#our_wedding')
-              i.fa.fa-angle-double-down.animated
-      button(class='btn btn-lg btn-primary', bs-modal='modal', data-template-url='/rsvp') RSVP
+        .navbar-header
+          button(type='button', class='navbar-toggle', bs-collapse-toggle)
+            i.fa.fa-bars
+          a(class='navbar-brand page-scroll', href='#page-top')
+            span.light Kaitlin <i class="fa fa-anchor"></i> Brendan
 
-block our_wedding
-  section(id='our_wedding', class='container content-section text-center', bs-scrollspy)
-    .col-lg-8.col-lg-offset-2
-      h2 Our Wedding
-      p(style='text-align: justify;')
-        | Canada has been a special place for Brendan's family for a long time,
-        | and a wedding seemed like the perfect opportunity to introduce one family to the other family’s traditions.
-
-      p(style='text-align: justify;')
-        | Brendan's grandmother, Ginger "Gigi" Heussler, spent her childhood in the house where she and her husband,
-        | Bud "Boppa" Heussler, now spend their summers.
-        | Brendan's father also spent his summers in this house, which played a large role in him meeting his wife,
-        | who was across the lake in New York. Keeping with tradition, Brendan and his brother spent time during their summers up "at the lake."
-        | Finally, Brendan brought Kaitlin to the house after they had been dating for 4.5 years.
-
-      p(style='text-align: justify;')
-        | After getting engaged, Brendan and Kaitlin sought a meaningful place to exchange their vows.
-        | and decided that the Canada house was such a special place to Brendan -- and now Kaitlin --
-        | that they would invite both families to come together and enjoy everything that it has to offer.
-
-      p(style='text-align: justify;')
-        | After deciding on the location and picking a reception venue, they also found out that the chapel nearby
-        | (where the ceremony will be held) is the same chapel where Brendan, his brother, and his father were all baptized.
-        | Brendan's grandparents still attend this chapel every Sunday during their summers there, and his grandfather sings in the chorus.
-        | This was the perfect last piece to the puzzle: Brendan and Kaitlin knew that this was where they should be married.
-
-      h3 Ceremony
-      p(style='white-space:pre-wrap;')
-        a(href='http://www.hollowaymemorialchapel.org/' target='_blank') Holloway Memorial Chapel<br>
-        | 1025 Point Abino Rd S, Ridgeway, ON L0S 1N0, Canada
-      h3 Reception
-      p(style='white-space:pre-wrap;')
-        a(href='https://www.buffalocanoeclub.com/Home.aspx', target='_blank') Buffalo Canoe Club<br>
-        | 4475 Erie Rd, Ridgeway, ON L0S 1N0, Canada
-        | Attire: Cocktail
-      h2 Other Events
-      h3 Rehearsal Dinner
-      p(style='white-space:pre-wrap;')
-        | Friday, June 17 2015
-        | Buffalo Yacht Club, Point Abino Station
-        | 1007 Point Abino Rd S, Ridgeway, ON L0S 1N0, Canada
-      a(
-        class='btn btn-default btn-lg'
-        target='_blank'
-        href='https://www.google.com/maps/d/edit?mid=zDArS8xNaHXo.kwJrlap2lHOU&usp=sharing'
-      ) View Map
-
-block photos
-  section(id='photos', class='container content-section text-center', bs-scrollspy)
-    .row
-      .col-lg-8.col-lg-offset-2
-        h2 Photos
-        .row
-          .col-sm-4
-            a(href='images/LHP-84.JPG', data-gallery)
-              img(class='img-responsive img-rounded', src='images/LHP-84.JPG')
-          .col-sm-4
-            a(href='images/LHP-78.JPG', data-gallery)
-              img(class='img-responsive img-rounded', src='images/LHP-78.JPG')
-          .col-sm-4
-            a(href='images/LHP-7.JPG', data-gallery)
-              img(class='img-responsive img-rounded', src='images/LHP-7.JPG')
-        .row
-          .col-sm-4
-            a(href='images/LHP-45.JPG', data-gallery)
-              img(class='img-responsive img-rounded', src='images/LHP-45-landscape.JPG')
-          .col-sm-4
-            a(href='images/LHP-131.JPG', data-gallery)
-              img(class='img-responsive img-rounded', src='images/LHP-131.JPG')
-          .col-sm-4
-            a(href='images/LHP-39.JPG', data-gallery)
-              img(class='img-responsive img-rounded', src='images/LHP-39.JPG')
-
-  // TODO get the Image Gallery working again
-  // The Bootstrap Image Gallery lightbox, should be a child element of the document body
-  div(id='blueimp-gallery', class='blueimp-gallery', data-use-bootstrap-modal='false')
-    // The container for the model slides
-    .slides
-    // Controls for the borderless lightbox
-    h3.title
-    a.prev ‹
-    a.next ›
-    a.close ×
-    a.play-pause
-    ol.indicator
-    // The modal dialog, which will be used to wrap the lightbox content
-    .modal.fade
-      .modal-dialog
-        .modal-content
-          .modal-header
-            button(type='button', class='close', aria-hidden='true') $times;
-            h4.modal-title
-          .modal-body.next
-          .modal-footer
-            button(type='button', class='btn btn-default pull-left prev')
-              i.fa.fa-chevron-left
-              | Previous
-            button(type='button', class='btn btn-primary next')
-              | Next
-              i.fa.fa-chevron-right
-
-block details
-  section(id='details', class='container content-section text-center', bs-scrollspy)
-    .row
-      .col-lg-8.col-lg-offset-2
-        h2 Details
-        h3 Accommodations
-        p
-          | Rooms are being held at a discounted rate at two hotels nearby.
-          | To receive the special rate, mention the Heussler/Kehl wedding when booking your room.
-        .row
-          .col-sm-6
-            h3 The Clarion Hotel
-            p
-              | The Clarion is located about 10-15 minutes from the wedding venues.
-              | Rooms are single/double occupancy with a small fee for additional guests.
-              | Rooms are being held for Friday and Saturday night.
-            a(
-              class='btn btn-default btn-lg'
-              target='_blank'
-              href='http://www.choicehotels.ca/en/clarion-hotel-&-conference-centre-fort-erie-hotel-cn965?promo=gglocalcaen'
-            ) Visit Website
-          .col-sm-6
-            h3 Crystal Beach Motel
-            p
-              | The Crystal Beach Motel is a simple motel that offers basic amenities very close to the wedding venues.
-              | The motel offers a small pool as well as beach access and is walking distance to shops and restaurants.
-            a(
-              class='btn btn-default btn-lg'
-              target='_blank'
-              href='http://www.crystalbeachmotel.com/'
-            ) Visit Website
-        h3 Travel
-        p
-          | The closest airport is Buffalo Niagara International Airport.
-          | It is 15 minutes from the U.S./Canadian border at the Peace Bridge.
-          | Once you are over the border, the venue itself is another 20 minutes.&nbsp;
-          a(href='https://www.niagaraairbus.com/Default.aspx', target='_blank') The Niagara Airbus&nbsp;
-          | provides a shuttle bus service from the Buffalo Airport to Fort Erie, Canada.
-          | Bridge traffic can vary, so please allow time to cross the border.&nbsp;
-          a(href='http://mobile.peacebridge.com/', target='_blank') The Peace Bridge Authority&nbsp;
-          | provides real-time data for traffic wait times.
-        p
-          | The Toronto Pearson International Airport (YYZ) is an hour and a half drive from the wedding venues.
-          | Toronto offers more direct flights from major cities and you would go through customs at the airport.
-        p
-          | U.S. and Canadian currencies are accepted at the toll at the Canadian Border as well as EZ Pass.
-          | U.S. currency is accepted at most stores and restaurants in the area, but usually not at par.
-        // TODO Style this
-        h3 Requirements
-        p
-          | Everyone crossing the Canadian border is required to carry a passport, regardless of age.
-        h3 Things to Do
-        h4 Niagara Falls
-        p
-          | The Canadian side of Niagara Falls is a 20-minute drive from the Clarion Hotel.
-          | If you have time (or if you're a gambler!), the world-class attraction is worth a visit.
-        h4 Crystal Beach
-        p
-          | If you are a beach goer, then you will be able to enjoy beautiful Crystal Beach.
-          | The Heussler's will have several activities set up at their house including beach volleyball and other beach games.
-
-block registry
-  section(id='registry', class='container-fluid content-section text-center', bs-scrollspy)
-    .row
-      .col-lg-8.col-lg-offset-2
-        h2 Registry
-        .registry-links.row
-          ul.list-inline.banner-social-buttons
+        div(class='navbar-collapse navbar-right', ng-cloak, bs-collapse-target)
+          ul(class='nav navbar-nav', bs-scrollspy-list)
+            li.hidden
+              a(href='#page-top')
             li
-              // TODO put actual registry links in
+              //TODO Replace links with variables
+              a(class='page-scroll', href='#our_wedding', ng-click='activeCollapse = -1') Our Wedding
+            li
+              a(class='page-scroll', href='#photos', ng-click='activeCollapse = -1') Photos
+            li
+              a(class='page-scroll', href='#details', ng-click='activeCollapse = -1') Details
+            li
+              a(class='page-scroll', href='#registry', ng-click='activeCollapse = -1') Registry
+
+    header.intro
+      .intro-body
+        .container
+          .row
+            .col-sm-8.col-sm-offset-2
+              h1.brand-heading Kaitlin&nbsp;& Brendan
+              p.intro-text(style='white-space:pre;')
+                | June 18, 2015
+                | Abino Bay, Canada
+              a(class='btn btn-circle page-scroll' href='#our_wedding')
+                i.fa.fa-angle-double-down.animated
+        button(class='btn btn-lg btn-primary', bs-modal='modal', data-template-url='/rsvp') RSVP
+
+    section(id='our_wedding', class='container content-section text-center', bs-scrollspy)
+      .col-lg-8.col-lg-offset-2
+        h2 Our Wedding
+        p(style='text-align: justify;')
+          | Canada has been a special place for Brendan's family for a long time,
+          | and a wedding seemed like the perfect opportunity to introduce one family to the other family’s traditions.
+
+        p(style='text-align: justify;')
+          | Brendan's grandmother, Ginger "Gigi" Heussler, spent her childhood in the house where she and her husband,
+          | Bud "Boppa" Heussler, now spend their summers.
+          | Brendan's father also spent his summers in this house, which played a large role in him meeting his wife,
+          | who was across the lake in New York. Keeping with tradition, Brendan and his brother spent time during their summers up "at the lake."
+          | Finally, Brendan brought Kaitlin to the house after they had been dating for 4.5 years.
+
+        p(style='text-align: justify;')
+          | After getting engaged, Brendan and Kaitlin sought a meaningful place to exchange their vows.
+          | and decided that the Canada house was such a special place to Brendan -- and now Kaitlin --
+          | that they would invite both families to come together and enjoy everything that it has to offer.
+
+        p(style='text-align: justify;')
+          | After deciding on the location and picking a reception venue, they also found out that the chapel nearby
+          | (where the ceremony will be held) is the same chapel where Brendan, his brother, and his father were all baptized.
+          | Brendan's grandparents still attend this chapel every Sunday during their summers there, and his grandfather sings in the chorus.
+          | This was the perfect last piece to the puzzle: Brendan and Kaitlin knew that this was where they should be married.
+
+        h3 Ceremony
+        p(style='white-space:pre-wrap;')
+          a(href='http://www.hollowaymemorialchapel.org/' target='_blank') Holloway Memorial Chapel<br>
+          | 1025 Point Abino Rd S, Ridgeway, ON L0S 1N0, Canada
+        h3 Reception
+        p(style='white-space:pre-wrap;')
+          a(href='https://www.buffalocanoeclub.com/Home.aspx', target='_blank') Buffalo Canoe Club<br>
+          | 4475 Erie Rd, Ridgeway, ON L0S 1N0, Canada
+          | Attire: Cocktail
+        h2 Other Events
+        h3 Rehearsal Dinner
+        p(style='white-space:pre-wrap;')
+          | Friday, June 17 2015
+          | Buffalo Yacht Club, Point Abino Station
+          | 1007 Point Abino Rd S, Ridgeway, ON L0S 1N0, Canada
+        a(
+          class='btn btn-default btn-lg'
+          target='_blank'
+          href='https://www.google.com/maps/d/edit?mid=zDArS8xNaHXo.kwJrlap2lHOU&usp=sharing'
+        ) View Map
+
+    section(id='photos', class='container content-section text-center', bs-scrollspy)
+      .row
+        .col-lg-8.col-lg-offset-2
+          h2 Photos
+          .row
+            .col-sm-4
+              a(href='images/LHP-84.JPG', data-gallery)
+                img(class='img-responsive img-rounded', src='images/LHP-84.JPG')
+            .col-sm-4
+              a(href='images/LHP-78.JPG', data-gallery)
+                img(class='img-responsive img-rounded', src='images/LHP-78.JPG')
+            .col-sm-4
+              a(href='images/LHP-7.JPG', data-gallery)
+                img(class='img-responsive img-rounded', src='images/LHP-7.JPG')
+          .row
+            .col-sm-4
+              a(href='images/LHP-45.JPG', data-gallery)
+                img(class='img-responsive img-rounded', src='images/LHP-45-landscape.JPG')
+            .col-sm-4
+              a(href='images/LHP-131.JPG', data-gallery)
+                img(class='img-responsive img-rounded', src='images/LHP-131.JPG')
+            .col-sm-4
+              a(href='images/LHP-39.JPG', data-gallery)
+                img(class='img-responsive img-rounded', src='images/LHP-39.JPG')
+
+    // TODO get the Image Gallery working again
+    // The Bootstrap Image Gallery lightbox, should be a child element of the document body
+    div(id='blueimp-gallery', class='blueimp-gallery', data-use-bootstrap-modal='false')
+      // The container for the model slides
+      .slides
+      // Controls for the borderless lightbox
+      h3.title
+      a.prev ‹
+      a.next ›
+      a.close ×
+      a.play-pause
+      ol.indicator
+      // The modal dialog, which will be used to wrap the lightbox content
+      .modal.fade
+        .modal-dialog
+          .modal-content
+            .modal-header
+              button(type='button', class='close', aria-hidden='true') $times;
+              h4.modal-title
+            .modal-body.next
+            .modal-footer
+              button(type='button', class='btn btn-default pull-left prev')
+                i.fa.fa-chevron-left
+                | Previous
+              button(type='button', class='btn btn-primary next')
+                | Next
+                i.fa.fa-chevron-right
+
+    section(id='details', class='container content-section text-center', bs-scrollspy)
+      .row
+        .col-lg-8.col-lg-offset-2
+          h2 Details
+          h3 Accommodations
+          p
+            | Rooms are being held at a discounted rate at two hotels nearby.
+            | To receive the special rate, mention the Heussler/Kehl wedding when booking your room.
+          .row
+            .col-sm-6
+              h3 The Clarion Hotel
+              p
+                | The Clarion is located about 10-15 minutes from the wedding venues.
+                | Rooms are single/double occupancy with a small fee for additional guests.
+                | Rooms are being held for Friday and Saturday night.
               a(
                 class='btn btn-default btn-lg'
-              )
-                i.fa.fa-fw.fa-font
-                | Anthropologie
-            li
+                target='_blank'
+                href='http://www.choicehotels.ca/en/clarion-hotel-&-conference-centre-fort-erie-hotel-cn965?promo=gglocalcaen'
+              ) Visit Website
+            .col-sm-6
+              h3 Crystal Beach Motel
+              p
+                | The Crystal Beach Motel is a simple motel that offers basic amenities very close to the wedding venues.
+                | The motel offers a small pool as well as beach access and is walking distance to shops and restaurants.
               a(
                 class='btn btn-default btn-lg'
-              )
-                i.fa.fa-fw.fa-cutlery
-                | Crate & Barrel
-            li
-              a(
-                class='btn btn-default btn-lg'
-              )
-                i.fa.fa-fw.fa-star
-                | Macy's
+                target='_blank'
+                href='http://www.crystalbeachmotel.com/'
+              ) Visit Website
+          h3 Travel
+          p
+            | The closest airport is Buffalo Niagara International Airport.
+            | It is 15 minutes from the U.S./Canadian border at the Peace Bridge.
+            | Once you are over the border, the venue itself is another 20 minutes.&nbsp;
+            a(href='https://www.niagaraairbus.com/Default.aspx', target='_blank') The Niagara Airbus&nbsp;
+            | provides a shuttle bus service from the Buffalo Airport to Fort Erie, Canada.
+            | Bridge traffic can vary, so please allow time to cross the border.&nbsp;
+            a(href='http://mobile.peacebridge.com/', target='_blank') The Peace Bridge Authority&nbsp;
+            | provides real-time data for traffic wait times.
+          p
+            | The Toronto Pearson International Airport (YYZ) is an hour and a half drive from the wedding venues.
+            | Toronto offers more direct flights from major cities and you would go through customs at the airport.
+          p
+            | U.S. and Canadian currencies are accepted at the toll at the Canadian Border as well as EZ Pass.
+            | U.S. currency is accepted at most stores and restaurants in the area, but usually not at par.
+          // TODO Style this
+          h3 Requirements
+          p
+            | Everyone crossing the Canadian border is required to carry a passport, regardless of age.
+          h3 Things to Do
+          h4 Niagara Falls
+          p
+            | The Canadian side of Niagara Falls is a 20-minute drive from the Clarion Hotel.
+            | If you have time (or if you're a gambler!), the world-class attraction is worth a visit.
+          h4 Crystal Beach
+          p
+            | If you are a beach goer, then you will be able to enjoy beautiful Crystal Beach.
+            | The Heussler's will have several activities set up at their house including beach volleyball and other beach games.
 
-block footer
-  footer(class='content-section text-center')
-    img(class='img-responsive', style='width: 100%;', src='images/LHP-120-wide.JPG')
+    section(id='registry', class='container-fluid content-section text-center', bs-scrollspy)
+      .row
+        .col-lg-8.col-lg-offset-2
+          h2 Registry
+          .registry-links.row
+            ul.list-inline.banner-social-buttons
+              li
+                // TODO put actual registry links in
+                a(
+                  class='btn btn-default btn-lg'
+                )
+                  i.fa.fa-fw.fa-font
+                  | Anthropologie
+              li
+                a(
+                  class='btn btn-default btn-lg'
+                )
+                  i.fa.fa-fw.fa-cutlery
+                  | Crate & Barrel
+              li
+                a(
+                  class='btn btn-default btn-lg'
+                )
+                  i.fa.fa-fw.fa-star
+                  | Macy's
+
+    footer(class='content-section text-center')
+      img(class='img-responsive', style='width: 100%;', src='images/LHP-120-wide.JPG')
+
+    // TODO Remove All JQuery
+    script(src='components/jquery/dist/jquery.min.js')
+    script(src='components/jquery-easing/jquery.easing.min.js')
+    script(src='components/blueimp-gallery/js/blueimp-gallery.min.js')
+    script(src='components/blueimp-bootstrap-image-gallery/js/bootstrap-image-gallery.min.js')
+    script(src='javascripts/grayscale.js')
+
+    script(src='components/angular/angular.min.js')
+    script(src='components/angular-animate/angular-animate.min.js')
+    script(src='components/angular-route/angular-route.min.js')
+    script(src='components/angular-strap/dist/angular-strap.min.js')
+    script(src='components/angular-strap/dist/angular-strap.tpl.min.js')
+
+    script(src='javascripts/app.js')
+    script(src='javascripts/directives.js')
+    script(src='javascripts/controllers.js')

@@ -3,8 +3,7 @@
 var weddingApp = angular.module('weddingApp', [
     'weddingApp.controllers',
     'weddingApp.directives',
-    'ngRoute',
-    'mgcrea.ngStrap'
+    'ngRoute'
 ]).
 config(function ($routeProvider, $locationProvider) {
     // TODO do I need RouteProvider?

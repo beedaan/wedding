@@ -8,7 +8,7 @@ block body
         .navbar-header
           button(type='button', class='navbar-toggle', bs-collapse-toggle)
             i.fa.fa-bars
-          a(class='navbar-brand page-scroll', href='#page-top')
+          a(class='navbar-brand', href='#page-top', du-smooth-scroll)
             span.light Kaitlin <i class="fa fa-anchor"></i> Brendan
 
         div(class='navbar-collapse navbar-right', ng-cloak, bs-collapse-target)
@@ -16,14 +16,13 @@ block body
             li.hidden
               a(href='#page-top')
             li
-              //TODO Replace links with variables
-              a(class='page-scroll', href='#our_wedding', ng-click='activeCollapse = -1') Our Wedding
+              a(href='#our_wedding', du-smooth-scroll, ng-click='activeCollapse = -1') Our Wedding
             li
-              a(class='page-scroll', href='#photos', ng-click='activeCollapse = -1') Photos
+              a(href='#photos', du-smooth-scroll, ng-click='activeCollapse = -1') Photos
             li
-              a(class='page-scroll', href='#details', ng-click='activeCollapse = -1') Details
+              a(href='#details', du-smooth-scroll, ng-click='activeCollapse = -1') Details
             li
-              a(class='page-scroll', href='#registry', ng-click='activeCollapse = -1') Registry
+              a(href='#registry', du-smooth-scroll, ng-click='activeCollapse = -1') Registry
 
     header.intro
       .intro-body
@@ -231,13 +230,13 @@ block body
     script(src='components/jquery-easing/jquery.easing.min.js')
     script(src='components/blueimp-gallery/js/blueimp-gallery.min.js')
     script(src='components/blueimp-bootstrap-image-gallery/js/bootstrap-image-gallery.min.js')
-    script(src='javascripts/grayscale.js')
 
     script(src='components/angular/angular.min.js')
     script(src='components/angular-animate/angular-animate.min.js')
     script(src='components/angular-route/angular-route.min.js')
     script(src='components/angular-strap/dist/angular-strap.min.js')
     script(src='components/angular-strap/dist/angular-strap.tpl.min.js')
+    script(src='components/angular-scroll/angular-scroll.min.js')
 
     script(src='javascripts/app.js')
     script(src='javascripts/directives.js')

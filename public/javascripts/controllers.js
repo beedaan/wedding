@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('weddingApp.controllers', ['mgcrea.ngStrap.modal','duScroll']).
+angular.module('weddingApp.controllers', ['mgcrea.ngStrap.modal', 'mgcrea.ngStrap.scrollspy','duScroll']).
     controller('AppCtrl', function($scope, $log, $modal) {
         $log.debug('loaded AppCtrl');
 

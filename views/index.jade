@@ -33,7 +33,7 @@ block body
               p.intro-text(style='white-space:pre;')
                 | June 18, 2015
                 | Abino Bay, Canada
-              a(class='btn btn-circle page-scroll' href='#our_wedding')
+              a(class='btn btn-circle' href='#our_wedding', du-smooth-scroll)
                 i.fa.fa-angle-double-down.animated
         button(class='btn btn-lg btn-primary', ng-click='openRsvpModal()') RSVP
 
@@ -108,33 +108,33 @@ block body
               a(href='images/LHP-39.JPG', data-gallery)
                 img(class='img-responsive img-rounded', src='images/LHP-39.JPG')
 
-    // TODO get the Image Gallery working again
-    // The Bootstrap Image Gallery lightbox, should be a child element of the document body
-    div(id='blueimp-gallery', class='blueimp-gallery', data-use-bootstrap-modal='false')
-      // The container for the model slides
-      .slides
-      // Controls for the borderless lightbox
-      h3.title
-      a.prev ‹
-      a.next ›
-      a.close ×
-      a.play-pause
-      ol.indicator
-      // The modal dialog, which will be used to wrap the lightbox content
-      .modal.fade
-        .modal-dialog
-          .modal-content
-            .modal-header
-              button(type='button', class='close', aria-hidden='true') $times;
-              h4.modal-title
-            .modal-body.next
-            .modal-footer
-              button(type='button', class='btn btn-default pull-left prev')
-                i.fa.fa-chevron-left
-                | Previous
-              button(type='button', class='btn btn-primary next')
-                | Next
-                i.fa.fa-chevron-right
+    //// TODO get the Image Gallery working again
+    //// The Bootstrap Image Gallery lightbox, should be a child element of the document body
+    //div(id='blueimp-gallery', class='blueimp-gallery', data-use-bootstrap-modal='false')
+    //  // The container for the model slides
+    //  .slides
+    //  // Controls for the borderless lightbox
+    //  h3.title
+    //  a.prev ‹
+    //  a.next ›
+    //  a.close ×
+    //  a.play-pause
+    //  ol.indicator
+    //  // The modal dialog, which will be used to wrap the lightbox content
+    //  .modal.fade
+    //    .modal-dialog
+    //      .modal-content
+    //        .modal-header
+    //          button(type='button', class='close', aria-hidden='true') $times;
+    //          h4.modal-title
+    //        .modal-body.next
+    //        .modal-footer
+    //          button(type='button', class='btn btn-default pull-left prev')
+    //            i.fa.fa-chevron-left
+    //            | Previous
+    //          button(type='button', class='btn btn-primary next')
+    //            | Next
+    //            i.fa.fa-chevron-right
 
     section(id='details', class='container content-section text-center', bs-scrollspy)
       .row
@@ -224,12 +224,6 @@ block body
 
     footer(class='content-section text-center')
       img(class='img-responsive', style='width: 100%;', src='images/LHP-120-wide.JPG')
-
-    // TODO Remove All JQuery
-    script(src='components/jquery/dist/jquery.min.js')
-    script(src='components/jquery-easing/jquery.easing.min.js')
-    script(src='components/blueimp-gallery/js/blueimp-gallery.min.js')
-    script(src='components/blueimp-bootstrap-image-gallery/js/bootstrap-image-gallery.min.js')
 
     script(src='components/angular/angular.min.js')
     script(src='components/angular-animate/angular-animate.min.js')

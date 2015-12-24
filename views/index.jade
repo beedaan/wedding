@@ -88,25 +88,9 @@ block body
         .col-lg-8.col-lg-offset-2
           h2 Photos
           .row
-            .col-sm-4
-              a(href='images/LHP-84.JPG')
-                img(class='img-responsive img-rounded', src='images/LHP-84.JPG')
-            .col-sm-4
-              a(href='images/LHP-78.JPG')
-                img(class='img-responsive img-rounded', src='images/LHP-78.JPG')
-            .col-sm-4
-              a(href='images/LHP-7.JPG')
-                img(class='img-responsive img-rounded', src='images/LHP-7.JPG')
-          .row
-            .col-sm-4
-              a(href='images/LHP-45.JPG')
-                img(class='img-responsive img-rounded', src='images/LHP-45-landscape.JPG')
-            .col-sm-4
-              a(href='images/LHP-131.JPG')
-                img(class='img-responsive img-rounded', src='images/LHP-131.JPG')
-            .col-sm-4
-              a(href='images/LHP-39.JPG')
-                img(class='img-responsive img-rounded', src='images/LHP-39.JPG')
+            .col-sm-4(ng-repeat='image in images')
+              a(ng-click='openLightboxModal($index)')
+                img(class='img-responsive img-rounded', ng-src="{{image.thumbUrl}}")
 
     section(id='details', class='container content-section text-center', bs-scrollspy)
       .row
@@ -203,6 +187,8 @@ block body
     script(src='components/angular-strap/dist/angular-strap.min.js')
     script(src='components/angular-strap/dist/angular-strap.tpl.min.js')
     script(src='components/angular-scroll/angular-scroll.min.js')
+    script(src='components/angular-strap-lightbox/dist/angular-strap-lightbox.js')
+    script(src='components/angular-translate/angular-translate.min.js')
 
     script(src='javascripts/app.js')
     script(src='javascripts/directives.js')

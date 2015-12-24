@@ -1,0 +1,27 @@
+{
+  "name": "angular-strap-lightbox",
+  "version": "1.1.1",
+  "main": [
+    "dist/angular-strap-lightbox.js",
+    "dist/angular-strap-lightbox.css"
+  ],
+  "ignore": [
+    "src",
+    ".*",
+    "Gruntfile.js",
+    "package.json"
+  ],
+  "dependencies": {
+    "angular": "^1.4.6",
+    "angular-strap": "^2.3.2",
+    "angular-translate": "2.2.0"
+  },
+  "devDependencies": {
+    "angular-loading-bar": "^0.8.0",
+    "angular-touch": "^1.4.5",
+    "ng-videosharing-embed": "^0.3.3"
+  },
+  "resolutions": {
+    "angular": "^1.4.5"
+  }
+}

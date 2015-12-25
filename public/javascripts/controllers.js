@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('weddingApp.controllers', ['mgcrea.ngStrap.modal', 'mgcrea.ngStrap.scrollspy','duScroll', 'ngStrapLightbox', 'pascalprecht.translate']).
-    controller('AppCtrl', function($scope, $log, $modal, Lightbox) {
+angular.module('weddingApp.controllers', ['mgcrea.ngStrap.modal', 'mgcrea.ngStrap.scrollspy','duScroll']).
+    controller('AppCtrl', function($scope, $log, $modal) {
         $log.debug('loaded AppCtrl');
 
         $scope.openRsvpModal = function() {

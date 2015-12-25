@@ -13,9 +13,22 @@ angular.module('weddingApp.directives', ['ngAnimate', 'mgcrea.ngStrap.collapse']
             }
         }
     })
+    // The following directive assumes there is a body tag
     .directive('lightbox', function () {
         return {
             link: function (scope, element) {
+                var body = document.querySelector('body');
+                angular.element(body).append(
+                    '<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">' +
+                    '<div class="slides"></div>' +
+                    '<h3 class="title"></h3>' +
+                    '<a class="prev">‹</a>' +
+                    '<a class="next">›</a>' +
+                    '<a class="close">×</a>' +
+                    '<a class="play-pause"></a>' +
+                    '<ol class="indicator"></ol>' +
+                    '</div>');
+
                 angular.element(element).bind('click', function (event) {
                     event = event || window.event;
                     var target = event.target || event.srcElement,

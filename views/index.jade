@@ -92,16 +92,6 @@ block body
               a(href='{{image.url}}')
                 img(class='img-responsive img-rounded', ng-src="{{image.thumbUrl}}")
 
-    <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
-    div(id='blueimp-gallery', class='blueimp-gallery blueimp-gallery-controls')
-      .slides
-      h3.title
-      a.prev ‹
-      a.next ›
-      a.close ×
-      a.play-pause
-      ol.indicator
-
     section(id='details', class='container content-section text-center', bs-scrollspy)
       .row
         .col-lg-8.col-lg-offset-2

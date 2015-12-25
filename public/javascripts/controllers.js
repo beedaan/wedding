@@ -37,11 +37,6 @@ angular.module('weddingApp.controllers', ['mgcrea.ngStrap.modal', 'mgcrea.ngStra
                 'thumbUrl': 'images/LHP-39.JPG'
             }
         ];
-
-        $scope.openLightboxModal = function (index) {
-            console.log(index);
-            Lightbox.openModal($scope, $scope.images, index);
-        }
     }).
     controller('RsvpCtrl', function($scope, $log) {
         $scope.testData = 'testData';

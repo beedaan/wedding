@@ -87,10 +87,20 @@ block body
       .row
         .col-lg-8.col-lg-offset-2
           h2 Photos
-          .row
+          .row(id='links')
             .col-sm-4(ng-repeat='image in images')
-              a(ng-click='openLightboxModal($index)')
+              a(href='{{image.url}}')
                 img(class='img-responsive img-rounded', ng-src="{{image.thumbUrl}}")
+
+    <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+    div(id='blueimp-gallery', class='blueimp-gallery blueimp-gallery-controls')
+      .slides
+      h3.title
+      a.prev ‹
+      a.next ›
+      a.close ×
+      a.play-pause
+      ol.indicator
 
     section(id='details', class='container content-section text-center', bs-scrollspy)
       .row
@@ -187,8 +197,10 @@ block body
     script(src='components/angular-strap/dist/angular-strap.min.js')
     script(src='components/angular-strap/dist/angular-strap.tpl.min.js')
     script(src='components/angular-scroll/angular-scroll.min.js')
-    script(src='components/angular-strap-lightbox/dist/angular-strap-lightbox.js')
-    script(src='components/angular-translate/angular-translate.min.js')
+    script(src='components/blueimp-gallery/js/blueimp-gallery.min.js')
+
+    // TODO put in directive
+    script(src='javascripts/blueimp.js')
 
     script(src='javascripts/app.js')
     script(src='javascripts/directives.js')

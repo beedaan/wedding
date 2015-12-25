@@ -1,6 +1,6 @@
 {
   "name": "typopro-web",
-  "version": "3.4.1",
+  "version": "3.4.2",
   "description": "Fonts for Professional Typography (WEB)",
   "homepage": "https://github.com/rse/typopro",
   "license": "MIT AND Apache AND OFL AND CC0",
@@ -19,11 +19,11 @@
   "ignore": [
     "**/.*"
   ],
-  "_release": "3.4.1",
+  "_release": "3.4.2",
   "_resolution": {
     "type": "version",
-    "tag": "3.4.1",
-    "commit": "d3d7d386b004e675219e564391825f2b1d91dd2c"
+    "tag": "3.4.2",
+    "commit": "ff29ff1ac63d157c8a9cccef08b5b815c624662c"
   },
   "_source": "git://github.com/rse/typopro-web.git",
   "_target": "~3.4.1",

@@ -4,7 +4,14 @@
         .modal-header
           button(type='button', class='close', aria-label='Close', ng-click='$hide()')
             span(aria-hidden='true') &times;
-          h4.modal-title The title of my modal
-        .modal-body The context of my modal
+          h4.modal-title.text-center RSVP
+        .modal-body
+          form(name='rsvpValidate')
+            .row
+              .col-sm-offset-2.col-sm-3
+                label(for='code') Registration Key:
+              .col-sm-4
+                input(id='code', name='code', ng-model='code', required)
         .modal-footer
-          button(type='button' class='btn btn-default', ng-click='$hide()') Close
+          button(type='button', class='btn btn-default', ng-click='$hide()') Close
+          button(type='button', class='btn bt-primary', ng-click='validateRsvpCode()') Submit

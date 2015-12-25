@@ -1,9 +1,7 @@
 'use strict';
 
-angular.module('weddingApp.controllers', ['mgcrea.ngStrap.modal', 'mgcrea.ngStrap.scrollspy','duScroll']).
+angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap.modal', 'mgcrea.ngStrap.scrollspy','duScroll']).
     controller('AppCtrl', function($scope, $log, $modal) {
-        $log.debug('loaded AppCtrl');
-
         $scope.openRsvpModal = function() {
             $modal({
                 templateUrl: 'partials/rsvp',
@@ -38,7 +36,9 @@ angular.module('weddingApp.controllers', ['mgcrea.ngStrap.modal', 'mgcrea.ngStra
             }
         ];
     }).
-    controller('RsvpCtrl', function($scope, $log) {
-        $scope.testData = 'testData';
-        $log.debug('loaded RsvpCtrl')
+    controller('RsvpCtrl', function($scope, $log, weddingFactory) {
+        $scope.validateRsvpCode = function() {
+            console.log('trying to validate');
+            weddingFactory.validateRsvpCode();
+        }
     });

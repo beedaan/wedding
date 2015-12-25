@@ -12,4 +12,18 @@ angular.module('weddingApp.directives', ['ngAnimate', 'mgcrea.ngStrap.collapse']
                 });
             }
         }
+    })
+    .directive('lightbox', function () {
+        return {
+            link: function (scope, element) {
+                angular.element(element).bind('click', function (event) {
+                    event = event || window.event;
+                    var target = event.target || event.srcElement,
+                        link = target.src ? target.parentNode : target,
+                        options = {index: link, event: event},
+                        links = this.getElementsByTagName('a');
+                    blueimp.Gallery(links, options);
+                })
+            }
+        }
     });

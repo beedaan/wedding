@@ -87,7 +87,7 @@ block body
       .row
         .col-lg-8.col-lg-offset-2
           h2 Photos
-          .row(id='links')
+          .row(lightbox)
             .col-sm-4(ng-repeat='image in images')
               a(href='{{image.url}}')
                 img(class='img-responsive img-rounded', ng-src="{{image.thumbUrl}}")
@@ -198,9 +198,6 @@ block body
     script(src='components/angular-strap/dist/angular-strap.tpl.min.js')
     script(src='components/angular-scroll/angular-scroll.min.js')
     script(src='components/blueimp-gallery/js/blueimp-gallery.min.js')
-
-    // TODO put in directive
-    script(src='javascripts/blueimp.js')
 
     script(src='javascripts/app.js')
     script(src='javascripts/directives.js')

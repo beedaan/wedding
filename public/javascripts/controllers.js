@@ -43,6 +43,8 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
 
             weddingFactory.validateRsvpCode(code).then(function(res) {
                 console.log('success!');
-            })
+            }, function(res) {
+               console.log('there was an error');
+            });
         }
     });

@@ -1,10 +1,14 @@
 var express = require('express');
+var config = require('../config');
 var router = express.Router();
 
 /* POST rsvp code */
-router.post('/rsvp/code', function(req, res, next) {
-  console.log(req);
-  res.send('valid');
+router.post('/rsvp/validate', function(req, res, next) {
+  if(req.body.code.toLowerCase() === config.regKey.toLowerCase()) {
+    res.sendStatus(200);
+  } else {
+    res.sendStatus(422);
+  }
 });
 
 module.exports = router;

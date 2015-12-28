@@ -1,14 +1,18 @@
 var express = require('express');
-var config = require('../config');
+var service = require('../services/rsvpService');
 var router = express.Router();
 
 /* POST rsvp code */
 router.post('/rsvp/validate', function(req, res) {
-  if(req.body.code.toLowerCase() === config.regKey.toLowerCase()) {
+  if(service.isCodeValid(req.body.code)) {
     res.sendStatus(200);
   } else {
     res.status(422).send('Invalid registration key')
   }
 });
+
+//router.post('/rsvp/submit', function(req, res) {
+//  if(req.body.code.toLowerCase() === config.regKey.toLowerCase())
+//});
 
 module.exports = router;

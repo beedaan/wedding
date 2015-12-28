@@ -1,5 +1,6 @@
 @import "_variables.less";
 @import "_animations.less";
+@import "../../components/bootstrap/less/mixins.less";
 
 body {
   width: 100%;
@@ -284,31 +285,12 @@ a {
   }
 }
 
-.btn-primary {
-  border: 1px solid @primary;
-  outline: none;
-  color: white;
-  background-color: @primary;
-  &:hover,
-  &:focus {
-    border: 1px solid darken(@primary, 10%);
-    outline: none;
-    color: white;
-    background-color: darken(@primary, 10%);
-  }
+.btn-submit {
+  .button-variant(white, @primary, @primary);
 }
 
 .btn-close {
-  border: 1px solid @primary;
-  color: @primary;
-  background-color: transparent;
-  &:hover,
-  &:focus {
-    border: 1px solid darken(@primary, 10%);
-    outline: none;
-    color: @primary;
-    background-color: darken(white, 7%);
-  }
+  .button-variant(@primary, white, @primary);
 }
 
 ul.banner-social-buttons {

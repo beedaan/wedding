@@ -42,7 +42,7 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
 
         $scope.validateRsvpCode = function() {
 
-            var code = {'code': rsvpValidate.code.value};
+            var code = {'code': validateForm.code.value};
 
             weddingFactory.validateRsvpCode(code).then(function(res) {
                 console.log('success!');

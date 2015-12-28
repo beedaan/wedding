@@ -57,7 +57,7 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
                 console.log('success!');
                 $scope.validated = true;
             }, function(res) {
-               console.log('there was an error');
+               console.log(res.data);
             });
         };
 

@@ -7,7 +7,7 @@ router.post('/rsvp/validate', function(req, res) {
   if(req.body.code.toLowerCase() === config.regKey.toLowerCase()) {
     res.sendStatus(200);
   } else {
-    res.sendStatus(422);
+    res.status(422).send('Invalid registration key')
   }
 });
 

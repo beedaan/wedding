@@ -13,7 +13,7 @@
               input(id='code', name='code', ng-model='code', required)
               span(ng-show='rsvpValidate.code.$dirty && rsvpValidate.code.$error.required', class='help-block') Registration key is required
         .modal-footer
-          button(type='button', class='btn btn-default', ng-click='$hide()') Close
+          button(type='button', class='btn btn-close', ng-click='$hide()') Close
           button(type='submit', class='btn btn-primary', ng-disabled='rsvpValidate.$invalid') Submit
       form(name='rsvpSubmit', class='modal-content', ng-submit='submitRsvp()', ng-show='validated')
         .modal-header

@@ -53,11 +53,12 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
 
             var code = {'code': $scope.code};
 
-            weddingFactory.validateRsvpCode(code).then(function(res) {
-                console.log('success!');
+            weddingFactory.validateRsvpCode(code).then(function() {
                 $scope.validated = true;
             }, function(res) {
-               console.log(res.data);
+                if(res.status === 422) {
+                    $scope.rsvpForm.code.$setValidity('invalidKey', false);
+                }
             });
         };
 

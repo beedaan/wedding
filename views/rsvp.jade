@@ -1,23 +1,26 @@
 .modal(tabindex='-1', role='dialog', aria-hidden='true')
     .modal-dialog
-      form(name='rsvpForm', class='modal-content', ng-submit='submitForm()')
+      form(name='rsvpForm', class='modal-content form-horizontal', ng-submit='submitForm()')
         .modal-header
           button(type='button', class='close', aria-label='Close', ng-click='$hide()')
             span(aria-hidden='true') &times;
           h4.modal-title.text-center RSVP
         .modal-body
-          .row.form-group(ng-class="{ 'has-error': rsvpForm.code.$dirty && rsvpForm.code.$error.required }", ng-hide='validated')
-            .col-sm-offset-2.col-sm-3
-              label(for='code', class='text-right') Registration Key
-            .col-sm-6
-              input(id='code', name='code', required)
+          .form-group.row(ng-class="{ 'has-error': rsvpForm.code.$dirty && rsvpForm.code.$error.required }", ng-hide='validated')
+            label(for='code', class='col-sm-offset-2 col-sm-3 control-label text-right') Registration Key
+            .col-sm-5
+              input(class='form-control', id='code', name='code', ng-model='code', required)
               span(ng-show='rsvpForm.code.$dirty && rsvpForm.code.$error.required', class='help-block') Registration key is required
-          .row.form-group(ng-class="{ 'has-error': rsvpForm.name.$dirty && rsvpForm.name.$error.required }", ng-if='validated')
-            .col-sm-offset-2.col-sm-3
-              label(for='name', class='text-right') Name
+          .form-group.row(ng-class="{ 'has-error': rsvpForm.name.$dirty && rsvpForm.name.$error.required }", ng-if='validated')
+            label(for='name', class='col-sm-offset-1 col-sm-3 control-label text-right') Full Name
             .col-sm-6
-              input(id='name', name='name')
+              input(class='form-control', id='name', name='name', ng-model='name', placeholder='Merk Zerkerberg', required)
               span(ng-show='rsvpForm.name.$dirty && rsvpForm.name.$error.required', class='help-block') Your name is required
+          .form-group.row(ng-class="{ 'has-error': rsvpForm.email.$dirty && rsvpForm.email.$error.required }", ng-if='validated')
+            label(for='email', class='col-sm-offset-1 col-sm-3 control-label text-right') Email
+            .col-sm-6
+              input(class='form-control', id='email', name='email', ng-model='email', placeholder='merk@fercberk.com', required)
+              span(ng-show='rsvpForm.email.$dirty && rsvpForm.email.$error.required', class='help-block') Your email is required
         .modal-footer
           button(type='button', class='btn btn-close', ng-click='$hide()') Close
           button(type='submit', class='btn btn-submit', ng-disabled='rsvpForm.$invalid') Submit

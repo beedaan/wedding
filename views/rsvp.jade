@@ -1,17 +1,23 @@
 .modal(tabindex='-1', role='dialog', aria-hidden='true')
     .modal-dialog
-      form(name='validateForm', class='modal-content', ng-submit='validateRsvpCode()', ng-hide='validated')
+      form(name='rsvpForm', class='modal-content', ng-submit='submitForm()')
         .modal-header
           button(type='button', class='close', aria-label='Close', ng-click='$hide()')
             span(aria-hidden='true') &times;
           h4.modal-title.text-center RSVP
         .modal-body
-          .row.form-group(ng-class="{ 'has-error': validateForm.code.$dirty && validateForm.code.$error.required }")
+          .row.form-group(ng-class="{ 'has-error': rsvpForm.code.$dirty && rsvpForm.code.$error.required }", ng-hide='validated')
             .col-sm-offset-2.col-sm-3
-              label(for='code') Registration Key:
+              label(for='code', class='text-right') Registration Key
             .col-sm-6
-              input(id='code', name='code', ng-model='code', required)
-              span(ng-show='validateForm.code.$dirty && validateForm.code.$error.required', class='help-block') Registration key is required
+              input(id='code', name='code', required)
+              span(ng-show='rsvpForm.code.$dirty && rsvpForm.code.$error.required', class='help-block') Registration key is required
+          .row.form-group(ng-class="{ 'has-error': rsvpForm.name.$dirty && rsvpForm.name.$error.required }", ng-if='validated')
+            .col-sm-offset-2.col-sm-3
+              label(for='name', class='text-right') Name
+            .col-sm-6
+              input(id='name', name='name')
+              span(ng-show='rsvpForm.name.$dirty && rsvpForm.name.$error.required', class='help-block') Your name is required
         .modal-footer
           button(type='button', class='btn btn-close', ng-click='$hide()') Close
-          button(type='submit', class='btn btn-submit', ng-disabled='validateForm.$invalid') Submit
+          button(type='submit', class='btn btn-submit', ng-disabled='rsvpForm.$invalid') Submit

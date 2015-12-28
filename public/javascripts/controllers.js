@@ -40,9 +40,18 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
 
         $scope.validated = false;
 
+        $scope.submitForm = function() {
+            if(!$scope.validated) {
+                $scope.validateRsvpCode();
+            }
+            else {
+                $scope.submitRsvp();
+            }
+        };
+
         $scope.validateRsvpCode = function() {
 
-            var code = {'code': validateForm.code.value};
+            var code = {'code': rsvpForm.code.value};
 
             weddingFactory.validateRsvpCode(code).then(function(res) {
                 console.log('success!');
@@ -50,5 +59,9 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
             }, function(res) {
                console.log('there was an error');
             });
+        };
+
+        $scope.submitRsvp = function() {
+          console.log('submitting rsvp');
         }
     });

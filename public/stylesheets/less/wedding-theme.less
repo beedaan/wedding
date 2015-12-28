@@ -284,6 +284,20 @@ a {
   }
 }
 
+.btn-primary {
+  border: 1px solid @primary;
+  outline: none;
+  color: @background;
+  background-color: @primary;
+  &:hover,
+  &:focus {
+    border: 1px solid darken(@primary, 10%);
+    outline: none;
+    color: @background;
+    background-color: darken(@primary, 5%);
+  }
+}
+
 ul.banner-social-buttons {
   margin-top: 0;
   @media (max-width: 1199px) {

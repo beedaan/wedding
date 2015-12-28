@@ -1,17 +1,27 @@
 .modal(tabindex='-1', role='dialog', aria-hidden='true')
     .modal-dialog
-      .modal-content
+      form(name='rsvpValidate', class='modal-content', ng-submit='validateRsvpCode()', ng-hide='validated')
         .modal-header
           button(type='button', class='close', aria-label='Close', ng-click='$hide()')
             span(aria-hidden='true') &times;
           h4.modal-title.text-center RSVP
         .modal-body
-          form(name='rsvpValidate')
-            .row
-              .col-sm-offset-2.col-sm-3
-                label(for='code') Registration Key:
-              .col-sm-4
-                input(id='code', name='code', ng-model='code', required)
+          .row
+            .col-sm-offset-2.col-sm-3
+              label(for='code') Registration Key:
+            .col-sm-6
+              input(id='code', name='code', ng-model='code', required)
+              span(ng-show='rsvpValidate.code.$dirty && rsvpValidate.code.$error.required', class='help-block') Registration key is required
         .modal-footer
           button(type='button', class='btn btn-default', ng-click='$hide()') Close
-          button(type='button', class='btn bt-primary', ng-click='validateRsvpCode()') Submit
+          button(type='submit', class='btn btn-primary', ng-disabled='rsvpValidate.$invalid') Submit
+      form(name='rsvpSubmit', class='modal-content', ng-submit='submitRsvp()', ng-show='validated')
+        .modal-header
+          button(type='button', class='close', aria-label='Close', ng-click='$hide()')
+            span(aria-hidden='true') &times;
+          h4.modal-title.text-center RSVP
+        .modal-body
+          h1 seems to be working
+        .modal-footer
+          button(type='button', class='btn btn-default', ng-click='$hide()') Close
+          button(type='submit', class='btn btn-primary') Submit

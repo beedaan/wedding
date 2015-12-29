@@ -6,6 +6,8 @@
             span(aria-hidden='true') &times;
           h4.modal-title.text-center RSVP
         .modal-body
+          .alert.alert-rsvp(ng-if='!validated')
+            p.text-center Enter the registration key that you received in your invitation.
           .form-group.row(ng-hide='validated',
             ng-class="{ 'has-error': (rsvpForm.code.$dirty && rsvpForm.code.$error.required) || rsvpForm.code.$error.invalidKey }")
             label(for='code', class='col-sm-offset-2 col-sm-3 control-label text-right') Registration Key
@@ -13,6 +15,7 @@
               input(id='code', name='code', ng-model='code',
                 class='form-control',
                 type='text',
+                ng-model-options='{debounce: 500}'
                 ng-change="rsvpForm.code.$setValidity('invalidKey', true)"
                 required)
               span(class='help-block',
@@ -25,6 +28,7 @@
               input(id='name', name='name', ng-model='name',
                 class='form-control',
                 type='text',
+                placeholder='Justin Trudeau'
                 required)
               span(class='help-block',
                 ng-show='rsvpForm.name.$dirty && rsvpForm.name.$error.required') Your name is required
@@ -35,7 +39,8 @@
               input(id='email', name='email', ng-model='email',
                 class='form-control',
                 type='email',
-                ng-model-options='{debounce: 500}'
+                ng-model-options='{debounce: 500}',
+                placeholder='justin@canada.com',
                 required)
               span(class='help-block',
                 ng-show='rsvpForm.email.$dirty && rsvpForm.email.$error.required') Your email is required

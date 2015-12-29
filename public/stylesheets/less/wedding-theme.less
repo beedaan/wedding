@@ -1,6 +1,7 @@
 @import "_variables.less";
 @import "_animations.less";
 @import "../../components/bootstrap/less/mixins.less";
+@import "../../components/bootstrap/less/variables.less";
 
 body {
   width: 100%;
@@ -291,6 +292,16 @@ a {
 
 .btn-close {
   .button-variant(@primary, white, @primary);
+}
+
+.alert-rsvp {
+  .alert-variant(lighten(@primary, 40%), lighten(@primary, 30%), darken(@primary, 20%));
+  p {
+    font-size: 16px;
+    @media (min-width : @screen-sm-min) {
+      font-size: 14px;
+    }
+  }
 }
 
 ul.banner-social-buttons {

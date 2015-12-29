@@ -13,6 +13,7 @@
               input(id='code', name='code', ng-model='code',
                 class='form-control',
                 type='text',
+                ng-change="rsvpForm.code.$setValidity('invalidKey', true)"
                 required)
               span(class='help-block',
                 ng-show='rsvpForm.code.$dirty && rsvpForm.code.$error.required') Registration key is required
@@ -24,7 +25,6 @@
               input(id='name', name='name', ng-model='name',
                 class='form-control',
                 type='text',
-                placeholder='Merk Zerkerberg',
                 required)
               span(class='help-block',
                 ng-show='rsvpForm.name.$dirty && rsvpForm.name.$error.required') Your name is required
@@ -35,7 +35,7 @@
               input(id='email', name='email', ng-model='email',
                 class='form-control',
                 type='email',
-                placeholder='merk@fercberk.com',
+                ng-model-options='{debounce: 500}'
                 required)
               span(class='help-block',
                 ng-show='rsvpForm.email.$dirty && rsvpForm.email.$error.required') Your email is required

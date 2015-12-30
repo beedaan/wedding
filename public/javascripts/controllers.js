@@ -14,6 +14,26 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
             rsvpModal.$promise.then(rsvpModal.show);
         };
 
+        var alertOptions = {
+            title: 'Uh Oh!',
+            content: 'There was a problem getting your RSVP.  Please try again.',
+            container: '#alerts-container',
+            placement: 'top',
+            type: 'error',
+            duration: 4,
+            show: true
+        };
+
+        $scope.$on('rsvpSubmit', function(event, data) {
+            console.log(data);
+            if(data === 'success') {
+                alertOptions.title = 'Hurray!';
+                alertOptions.content = "We got your RSVP and we're so excited you can make it!";
+                alertOptions.type = 'success';
+            }
+            $alert(alertOptions);
+        });
+
         $scope.images = [
             {
                 'url': 'images/LHP-84.JPG',
@@ -40,23 +60,6 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
                 'thumbUrl': 'images/LHP-39.JPG'
             }
         ];
-
-        $scope.$on('modal.hide', function(data) {
-            console.log(data);
-
-            var myAlert = $alert({
-                title: 'Thanks!',
-                content: 'We got your reservation',
-                container: '#alerts-container',
-                placement: 'top',
-                type: 'success',
-                duration: 4,
-                show: true});
-        });
-
-        $scope.$on('submitSuccess', function() {
-            console.log('sorta worked');
-        })
     }).
     controller('RsvpCtrl', function($scope, $rootScope, $log, weddingFactory) {
 
@@ -89,9 +92,9 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
         };
 
         $scope.submitRsvp = function () {
-            var event = 'submitError';
+            var eventData = 'error';
             weddingFactory.submitRsvp($scope.rsvp).then(function (res) {
-                event = 'submitSuccess';
+                eventData = 'success';
             }, function(res) {
                 if (res.status === 422) {
                     $log.error(res.statusText)
@@ -100,7 +103,7 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
                 }
             }).finally(function() {
                 $scope.$hide();
-                $rootScope.$broadcast(event);
+                $rootScope.$broadcast('rsvpSubmit', eventData);
             });
         }
     });

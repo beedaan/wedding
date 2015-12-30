@@ -39,6 +39,11 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
     controller('RsvpCtrl', function($scope, $log, weddingFactory) {
 
         $scope.validated = false;
+        $scope.rsvp = {
+            'code': "",
+            'name': "",
+            'email': ""
+        };
 
         $scope.submitForm = function() {
             if(!$scope.validated) {
@@ -51,7 +56,7 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
 
         $scope.validateRsvpCode = function() {
 
-            var code = {'code': $scope.code};
+            var code = {'code': $scope.rsvp.code};
 
             weddingFactory.validateRsvpCode(code).then(function() {
                 $scope.validated = true;
@@ -62,14 +67,15 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
             });
         };
 
-        $scope.submitRsvp = function() {
-
-            // TODO Figure out the best way to send this object
-            var rsvp = {
-                'code': $scope.code,
-                'name': $scope.name,
-                'email': $scope.email
-            };
-          console.log('submitting rsvp');
+        $scope.submitRsvp = function () {
+            weddingFactory.submitRsvp($scope.rsvp).then(function () {
+                $scope.$hide();
+            }, function(res) {
+                if (res.status === 422) {
+                    console.log('invalid key')
+                } else if (res.status === 503) {
+                    console.log('database timeout');
+                }
+            });
         }
     });

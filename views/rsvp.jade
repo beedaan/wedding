@@ -12,7 +12,7 @@
             ng-class="{ 'has-error': (rsvpForm.code.$dirty && rsvpForm.code.$error.required) || rsvpForm.code.$error.invalidKey }")
             label(for='code', class='col-sm-offset-2 col-sm-3 control-label text-right') Registration Key
             .col-sm-5
-              input(id='code', name='code', ng-model='code',
+              input(id='code', name='code', ng-model='rsvp.code',
                 class='form-control',
                 type='text',
                 ng-model-options='{debounce: 500}'
@@ -25,7 +25,7 @@
           .form-group.row(ng-class="{ 'has-error': rsvpForm.name.$dirty && rsvpForm.name.$error.required }", ng-if='validated')
             label(for='name', class='col-sm-offset-1 col-sm-3 control-label text-right') Full Name
             .col-sm-6
-              input(id='name', name='name', ng-model='name',
+              input(id='name', name='name', ng-model='rsvp.name',
                 class='form-control',
                 type='text',
                 placeholder='Justin Trudeau'
@@ -36,7 +36,7 @@
             ng-class="{ 'has-error': (rsvpForm.email.$dirty && rsvpForm.email.$error.required) || (rsvpForm.email.$dirty && rsvpForm.email.$invalid)}")
             label(for='email', class='col-sm-offset-1 col-sm-3 control-label text-right') Email
             .col-sm-6
-              input(id='email', name='email', ng-model='email',
+              input(id='email', name='email', ng-model='rsvp.email',
                 class='form-control',
                 type='email',
                 ng-model-options='{debounce: 500}',

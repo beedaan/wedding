@@ -41,7 +41,9 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
             }
         ];
 
-        $scope.$on('modal.hide', function() {
+        $scope.$on('modal.hide', function(data) {
+            console.log(data);
+
             var myAlert = $alert({
                 title: 'Thanks!',
                 content: 'We got your reservation',
@@ -51,8 +53,12 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
                 duration: 4,
                 show: true});
         });
+
+        $scope.$on('submitSuccess', function() {
+            console.log('sorta worked');
+        })
     }).
-    controller('RsvpCtrl', function($scope, $log, weddingFactory) {
+    controller('RsvpCtrl', function($scope, $rootScope, $log, weddingFactory) {
 
         $scope.validated = false;
         $scope.rsvp = {
@@ -64,8 +70,7 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
         $scope.submitForm = function() {
             if(!$scope.validated) {
                 $scope.validateRsvpCode();
-            }
-            else {
+            } else {
                 $scope.submitRsvp();
             }
         };
@@ -84,8 +89,9 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
         };
 
         $scope.submitRsvp = function () {
+            var event = 'submitError';
             weddingFactory.submitRsvp($scope.rsvp).then(function (res) {
-                $log.debug('saved rsvp', $scope.rsvp);
+                event = 'submitSuccess';
             }, function(res) {
                 if (res.status === 422) {
                     $log.error(res.statusText)
@@ -94,6 +100,7 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
                 }
             }).finally(function() {
                 $scope.$hide();
+                $rootScope.$broadcast(event);
             });
         }
     });

@@ -3,11 +3,7 @@ var Rsvp = require('../models/Rsvp');
 
 var rsvpService = {
     'isCodeValid': function (code) {
-        if (code.toLowerCase() === config.regKey.toLowerCase()) {
-            return true;
-        } else {
-            return false;
-        }
+        return code.toLowerCase() === config.regKey.toLowerCase();
     },
     'createRsvp': function (rsvpDto) {
         console.log('creating rsvp');

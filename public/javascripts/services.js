@@ -5,6 +5,9 @@ angular.module('weddingApp.services', []).
         return {
             validateRsvpCode: function (code) {
                 return $http.post('api/rsvp/validate', code);
+            },
+            submitRsvp: function (rsvp) {
+                return $http.post('api/rsvp/submit', rsvp);
             }
         };
     });

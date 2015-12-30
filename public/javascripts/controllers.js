@@ -1,12 +1,17 @@
 'use strict';
 
-angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap.modal', 'mgcrea.ngStrap.scrollspy','duScroll']).
-    controller('AppCtrl', function($scope, $log, $modal) {
+angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap.modal',
+    'mgcrea.ngStrap.scrollspy', 'mgcrea.ngStrap.alert', 'duScroll']).
+    controller('AppCtrl', function($scope, $log, $modal, $alert) {
+        var rsvpModal = $modal({
+            templateUrl: 'partials/rsvp',
+            controller: 'RsvpCtrl',
+            scope: $scope,
+            show: false
+        });
+
         $scope.openRsvpModal = function() {
-            $modal({
-                templateUrl: 'partials/rsvp',
-                controller: 'RsvpCtrl'
-            });
+            rsvpModal.$promise.then(rsvpModal.show);
         };
 
         $scope.images = [
@@ -35,6 +40,17 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
                 'thumbUrl': 'images/LHP-39.JPG'
             }
         ];
+
+        $scope.$on('modal.hide', function() {
+            var myAlert = $alert({
+                title: 'Thanks!',
+                content: 'We got your reservation',
+                container: '#alerts-container',
+                placement: 'top',
+                type: 'success',
+                duration: 4,
+                show: true});
+        });
     }).
     controller('RsvpCtrl', function($scope, $log, weddingFactory) {
 
@@ -68,14 +84,16 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
         };
 
         $scope.submitRsvp = function () {
-            weddingFactory.submitRsvp($scope.rsvp).then(function () {
-                $scope.$hide();
+            weddingFactory.submitRsvp($scope.rsvp).then(function (res) {
+                $log.debug('saved rsvp', $scope.rsvp);
             }, function(res) {
                 if (res.status === 422) {
-                    console.log('invalid key')
+                    $log.error(res.statusText)
                 } else if (res.status === 503) {
-                    console.log('database timeout');
+                    $log.error(res.statusText);
                 }
+            }).finally(function() {
+                $scope.$hide();
             });
         }
     });

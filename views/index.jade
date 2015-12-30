@@ -1,6 +1,8 @@
 extends layout
 
 block body
+  div(id='alerts-container')
+
   div(id='page-top', ng-controller='AppCtrl')
     nav(class='navbar navbar-custom navbar-fixed-top', role='navigation',
       bs-collapse, data-ng-model='activeCollapse', ng-class="{'top-nav-collapse': atTop}", top-spy)

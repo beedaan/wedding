@@ -46,6 +46,16 @@
                 ng-show='rsvpForm.email.$dirty && rsvpForm.email.$error.required') Your email is required
               span(class='help-block',
                 ng-show='rsvpForm.email.$dirty && rsvpForm.email.$invalid && !rsvpForm.email.$error.required') Your email is invalid
+          .form-group.row(ng-if='validated')
+            .col-sm-offset-2.col-sm-10
+              .btn-group(class='control-label', ng-model='rsvp.attend', bs-radio-group, required)
+                label
+                  input(type='radio', value='yes')
+                  |  Would be delighted to accept
+                  | &nbsp;&nbsp;&nbsp;&nbsp;
+                label
+                  input(type='radio', value='no')
+                  |  Must regretfully decline
         .modal-footer
           button(type='button', class='btn btn-close', ng-click='$hide()') Close
           button(type='submit', class='btn btn-submit', ng-disabled='rsvpForm.$invalid') Submit

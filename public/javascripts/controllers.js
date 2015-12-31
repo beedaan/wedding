@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap.modal',
-    'mgcrea.ngStrap.scrollspy', 'mgcrea.ngStrap.alert', 'duScroll']).
+    'mgcrea.ngStrap.scrollspy', 'mgcrea.ngStrap.alert', 'mgcrea.ngStrap.button', 'duScroll']).
     controller('AppCtrl', function($scope, $log, $modal, $alert) {
         var rsvpModal = $modal({
             templateUrl: 'partials/rsvp',

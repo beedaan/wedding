@@ -30,7 +30,6 @@
     "angular-motion": "~0.4.3",
     "angular-animate": "~1.4.8",
     "montserrat-webfont": "git@github.com:skounis/montserrat-webfont.git#~1.0.1",
-    "angular-route": "~1.4.8",
     "angular-scroll": "~1.0.0",
     "blueimp-gallery": "~2.16.0"
   }

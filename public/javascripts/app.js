@@ -2,10 +2,8 @@
 
 var weddingApp = angular.module('weddingApp', [
     'weddingApp.controllers',
-    'weddingApp.directives',
-    'ngRoute'
+    'weddingApp.directives'
 ]).
-config(function ($routeProvider, $locationProvider) {
-    // TODO do I need RouteProvider?
+config(function ($locationProvider) {
     $locationProvider.html5Mode(true);
 });

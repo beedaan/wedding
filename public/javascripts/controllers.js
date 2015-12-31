@@ -16,20 +16,24 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
 
         var alertOptions = {
             title: 'Uh Oh!',
-            content: 'There was a problem getting your RSVP.  Please try again.',
+            content: 'There was a problem saving your RSVP.  Please try again or ' +
+            '<a href="mailto:bheussler@gmail.com">let Brendan know</a> if you keep having problems',
             container: '#alerts-container',
             placement: 'top',
-            type: 'error',
-            duration: 4,
+            type: 'danger',
+            duration: 7,
             show: true
         };
 
         $scope.$on('rsvpSubmit', function(event, data) {
-            console.log(data);
-            if(data === 'success') {
+            if(data === true) {
                 alertOptions.title = 'Hurray!';
                 alertOptions.content = "We got your RSVP and we're so excited you can make it!";
                 alertOptions.type = 'success';
+            } else if (data === false) {
+                alertOptions.title = 'Bummer.';
+                alertOptions.content = "We sorry you can't make it.  Thank you so much for letting us know!";
+                alertOptions.type = 'info';
             }
             $alert(alertOptions);
         });
@@ -95,7 +99,7 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
         $scope.submitRsvp = function () {
             var eventData = 'error';
             weddingFactory.submitRsvp($scope.rsvp).then(function (res) {
-                eventData = 'success';
+                eventData = res.data;
             }, function(res) {
                 if (res.status === 422) {
                     $log.error(res.statusText)

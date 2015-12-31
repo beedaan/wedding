@@ -294,6 +294,25 @@ a {
   .button-variant(@primary, white, @primary);
 }
 
+.btn-rsvp {
+  .button-variant(white, transparent, @primary);
+  border-width: 2px;
+  font-size: 17px;
+  font-weight: bold;
+
+  @media (min-width: @screen-sm-min) {
+    border-width: 3px;
+    font-size: 26px;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: white;
+    background: fade(white, 10%);
+  }
+}
+
 .alert-rsvp {
   .alert-variant(lighten(@primary, 40%), lighten(@primary, 30%), darken(@primary, 20%));
   p {

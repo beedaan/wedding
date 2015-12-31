@@ -67,7 +67,8 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
         $scope.rsvp = {
             'code': "",
             'name': "",
-            'email': ""
+            'email': "",
+            'attend': ""
         };
 
         $scope.submitForm = function() {

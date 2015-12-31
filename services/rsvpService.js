@@ -5,14 +5,18 @@ var rsvpService = {
     'isCodeValid': function (code) {
         return code.toLowerCase() === config.regKey.toLowerCase();
     },
-    'createRsvp': function (rsvpDto) {
+    'createRsvp': function (rsvpDto, callback) {
         console.log('creating rsvp');
+        var attend = rsvpDto.attend === 'yes';
         Rsvp.create({
             name: rsvpDto.name,
-            email: rsvpDto.email
+            email: rsvpDto.email,
+            attend: attend
         }, function (err) {
             if (err)
                 throw(err);
+        }).then(function (rsvp) {
+            callback(rsvp.attend);
         });
     }
 };

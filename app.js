@@ -9,10 +9,11 @@ var mongoose = require('mongoose');
 var routes = require('./routes/index');
 var partials = require('./routes/partials');
 var api = require('./routes/api');
+var config = require('./config.js');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost/wedding');
+mongoose.connect('mongodb://'+config.dbUser+':'+config.dbPass+'@ds037195.mongolab.com:37195/kaitlinandbrendan');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,10 +24,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
-
-// TODO add less compile middleware
 
 app.use('/', routes);
 app.use('/partials', partials);

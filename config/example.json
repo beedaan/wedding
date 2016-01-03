@@ -1,0 +1,10 @@
+{
+  "dbConfig": {
+    "user": "",
+    "pass": "",
+    "url": "",
+    "port": "",
+    "database": ""
+  },
+  "regKey": ""
+}

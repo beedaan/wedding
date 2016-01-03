@@ -1,3 +1,4 @@
+var config = require('config');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -9,11 +10,15 @@ var mongoose = require('mongoose');
 var routes = require('./routes/index');
 var partials = require('./routes/partials');
 var api = require('./routes/api');
-var config = require('./config.js');
 
 var app = express();
 
-mongoose.connect('mongodb://'+config.dbUser+':'+config.dbPass+'@ds037195.mongolab.com:37195/kaitlinandbrendan');
+mongoose.connect('mongodb://'+
+    config.dbUser+':'+
+    config.dbPass+'@'+
+    config.mongoUrl+":"+
+    config.mongoPort+"/"+
+    config.db);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

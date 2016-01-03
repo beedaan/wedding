@@ -1,9 +1,9 @@
-var config = require('../config');
+var config = require('config');
 var Rsvp = require('../models/Rsvp');
 
 var rsvpService = {
     'isCodeValid': function (code) {
-        return code.toLowerCase() === config.regKey.toLowerCase();
+        return code.toLowerCase() === config.get('regKey').toLowerCase();
     },
     'createRsvp': function (rsvpDto, callback) {
         console.log('creating rsvp');

@@ -1,0 +1,8 @@
+{
+  "dbUser": "DB_USER",
+  "dbPass": "DB_PASS",
+  "mongoUrl": "MONGO_URL",
+  "mongoPort": "MONGO_PORT",
+  "db": "DB_NAME",
+  "regKey": "REG_KEY"
+}

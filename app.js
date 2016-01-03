@@ -1,4 +1,4 @@
-var dbConfig = require('config').get('dbConfig');
+var config = require('config');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -14,11 +14,11 @@ var api = require('./routes/api');
 var app = express();
 
 mongoose.connect('mongodb://'+
-    dbConfig.user+':'+
-    dbConfig.pass+'@'+
-    dbConfig.url+":"+
-    dbConfig.port+"/"+
-    dbConfig.database);
+    config.dbUser+':'+
+    config.dbPass+'@'+
+    config.mongoUrl+":"+
+    config.mongoPort+"/"+
+    config.db);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

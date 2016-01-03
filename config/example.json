@@ -1,10 +1,8 @@
 {
-  "dbConfig": {
-    "user": "",
-    "pass": "",
-    "url": "",
-    "port": "",
-    "database": ""
-  },
+  "dbUser": "",
+  "dbPass": "",
+  "mongoUrl": "",
+  "mongoPort": "",
+  "db": "",
   "regKey": ""
 }

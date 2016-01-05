@@ -41,27 +41,27 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
         $scope.images = [
             {
                 'url': 'images/LHP-84.JPG',
-                'thumbUrl': 'images/LHP-84.JPG'
+                'thumbUrl': 'images/LHP-84-thumb.JPG'
             },
             {
                 'url': 'images/LHP-78.JPG',
-                'thumbUrl': 'images/LHP-78.JPG'
+                'thumbUrl': 'images/LHP-78-thumb.JPG'
             },
             {
                 'url': 'images/LHP-7.JPG',
-                'thumbUrl': 'images/LHP-7.JPG'
+                'thumbUrl': 'images/LHP-7-thumb.JPG'
             },
             {
                 'url': 'images/LHP-45.JPG',
-                'thumbUrl': 'images/LHP-45-landscape.JPG'
+                'thumbUrl': 'images/LHP-45-thumb.JPG'
             },
             {
                 'url': 'images/LHP-131.JPG',
-                'thumbUrl': 'images/LHP-131.JPG'
+                'thumbUrl': 'images/LHP-131-thumb.JPG'
             },
             {
                 'url': 'images/LHP-39.JPG',
-                'thumbUrl': 'images/LHP-39.JPG'
+                'thumbUrl': 'images/LHP-39-thumb.JPG'
             }
         ];
     }).

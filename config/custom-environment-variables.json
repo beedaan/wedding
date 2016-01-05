@@ -4,5 +4,6 @@
   "mongoUrl": "MONGO_URL",
   "mongoPort": "MONGO_PORT",
   "db": "DB_NAME",
-  "regKey": "REG_KEY"
+  "regKey": "REG_KEY",
+  "enableRsvp": "ENABLE_RSVP"
 }

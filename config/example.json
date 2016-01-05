@@ -4,5 +4,6 @@
   "mongoUrl": "",
   "mongoPort": "",
   "db": "",
-  "regKey": ""
+  "regKey": "",
+  "enableRsvp": ""
 }

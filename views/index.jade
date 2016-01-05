@@ -35,8 +35,10 @@ block body
               p.intro-text(style='white-space:pre;')
                 | June 18, 2015
                 | Abino Bay, Canada
-              // TODO Enable this once we send invitations out
-              //button(class='btn btn-lg btn-rsvp', ng-click='openRsvpModal()') RSVP
+              if(enableRsvp=='true')
+                button(class='btn btn-lg btn-rsvp', data-ng-click='openRsvpModal()') RSVP
+              else
+                button(class='btn btn-lg btn-rsvp') RSVP Coming Soon
 
     section(id='our_wedding', class='container content-section text-center', bs-scrollspy)
       .col-lg-8.col-lg-offset-2

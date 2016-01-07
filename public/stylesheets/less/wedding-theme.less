@@ -33,7 +33,7 @@ p {
   margin: 0 0 25px;
   font-size: 18px;
   line-height: 1.5;
-  @media (min-width: 768px) {
+  @media only screen and (min-width: 768px) {
     margin: 0 0 35px;
     font-size: 20px;
     line-height: 1.6;
@@ -111,7 +111,7 @@ a {
       }
     }
   }
-  @media (min-width: 768px) {
+  @media only screen and (min-width: 768px) {
     padding: 20px 0;
     border-bottom: none;
     letter-spacing: 1px;
@@ -149,7 +149,7 @@ a {
       font-size: 18px;
     }
   }
-  @media (min-width: 768px) {
+  @media only screen and (min-width: 768px) {
     height: 100%;
     padding: 0;
     .intro-body {
@@ -247,7 +247,7 @@ a {
   margin-top: 100px;
 }
 
-@media (min-width: 767px) {
+@media only screen and (min-width: 767px) {
   .content-section {
     padding-top: 100px;
     margin-top: 150px;
@@ -419,7 +419,7 @@ body {
   margin-left: -42%;
   z-index: 1;
 
-  @media (min-width: @screen-sm-min) {
+  @media only screen and (min-width: @screen-sm-min) {
     width: 59%;
     margin-left: -30%;
   }
@@ -435,3 +435,12 @@ body {
   .alert-variant(transparent, white, white)
 }
 
+@media only screen and (min-width: @screen-sm-min) {
+  #boatLandscape { display: block; }
+  #boatLandscapeSm { display: none; }
+}
+
+@media only screen and (max-width: @screen-sm-min) {
+  #boatLandscape { display: none; }
+  #boatLandscapeSm { display: block; }
+}

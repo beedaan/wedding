@@ -33,7 +33,7 @@ block body
             .col-sm-8.col-sm-offset-2
               h1.brand-heading Kaitlin&nbsp;& Brendan
               p.intro-text(style='white-space:pre;')
-                | June 18, 2015
+                | June 18, 2016
                 | Abino Bay, Canada
               if(enableRsvp=='true')
                 button(class='btn btn-lg btn-rsvp', data-ng-click='openRsvpModal()') RSVP
@@ -183,7 +183,10 @@ block body
                   | Macy's
 
     footer(class='content-section text-center')
-      img(class='img-responsive', style='width: 100%;', src='images/LHP-120-wide.JPG')
+      #boatLandscape
+        img(class='img-responsive', style='width: 100%;', src='images/LHP-120-wide.JPG')
+      #boatLandscapeSm
+        img(class='img-responsive', style='width: 100%;', src='images/LHP-120-wide-sm.JPG')
       h5(style='padding-top: 10px')
         a(href='http://bheussler.name', target='_blank') Built by Brendan&nbsp;
         i.fa.fa-genderless
@@ -196,7 +199,4 @@ block body
     script(src='components/angular-scroll/angular-scroll.min.js')
     script(src='components/blueimp-gallery/js/blueimp-gallery.min.js')
 
-    script(src='javascripts/app.js')
-    script(src='javascripts/directives.js')
-    script(src='javascripts/services.js')
-    script(src='javascripts/controllers.js')
+    script(src='dist/all.min.js')

@@ -1,6 +1,6 @@
 {
   "name": "montserrat-webfont",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "homepage": "https://github.com/skounis/montserrat-webfont",
   "authors": [
     "Stavros Kounis <skounis@gmail.com>"
@@ -31,14 +31,13 @@
   "ignore": [
     "**/.*"
   ],
-  "_release": "1.0.1",
+  "_release": "1.0.3",
   "_resolution": {
     "type": "version",
-    "tag": "v1.0.1",
-    "commit": "bd874061eb3a7acb6c301ab570ddcf158b5850f0"
+    "tag": "v1.0.3",
+    "commit": "2840b618ded87c51f6295922b620f9aba5bddb8b"
   },
-  "_source": "git@github.com:skounis/montserrat-webfont.git",
-  "_target": "~1.0.1",
-  "_originalSource": "git@github.com:skounis/montserrat-webfont.git",
-  "_direct": true
+  "_source": "git@github.com:beedaan/montserrat-webfont.git",
+  "_target": "~1.0.3",
+  "_originalSource": "git@github.com:beedaan/montserrat-webfont.git"
 }

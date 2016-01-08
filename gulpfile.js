@@ -31,9 +31,9 @@ gulp.task('critical-plugins', function () {
 
 gulp.task('uncritical-plugins', function () {
     return gulp.src([
-            'public/components/angular-strap/dist/angular-strap.tpl.js',
-            'public/components/angular-scroll/angular-scroll.js',
-            'public/components/blueimp-gallery/js/blueimp-gallery.js'],
+            'public/components/angular-strap/dist/angular-strap.tpl.min.js',
+            'public/components/angular-scroll/angular-scroll.min.js',
+            'public/components/blueimp-gallery/js/blueimp-gallery.min.js'],
         {base: 'public/components'})
         .pipe(ngAnnotate())
         .pipe(uglify())

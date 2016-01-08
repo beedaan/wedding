@@ -13,7 +13,7 @@ var partials = require('./routes/partials');
 var api = require('./routes/api');
 
 var app = express();
-var fourWeek = 2419200;
+var cacheTime = 86400000*7;
 
 mongoose.connect('mongodb://' +
     config.dbUser + ':' +
@@ -32,7 +32,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public'), {maxAge: fourWeek}));
+app.use(express.static(path.join(__dirname, 'public'), {maxAge: cacheTime}));
 
 app.use('/', routes);
 app.use('/partials', partials);

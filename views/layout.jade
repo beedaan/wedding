@@ -9,14 +9,20 @@ html(ng-app='weddingApp')
     meta(name='description', content="Kaitlin & Brendan's Wedding Website")
     meta(name='author', content='Brendan Heussler')
 
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css",
+      rel="stylesheet",
+      integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==",
+      crossorigin="anonymous")
     link(rel='stylesheet', href='components/montserrat-webfont/css/montserrat-webfont.min.css')
     link(rel='stylesheet', href='components/typopro-web/web/TypoPRO-Lora/TypoPRO-Lora.css')
     link(rel='stylesheet', href='components/font-awesome/css/font-awesome.min.css')
-    link(rel='stylesheet', href='components/bootstrap/dist/css/bootstrap.min.css')
-    link(rel='stylesheet', href='components/angular-motion/dist/angular-motion.min.css')
-    link(rel='stylesheet', href='components/blueimp-gallery/css/blueimp-gallery.min.css')
+    link(rel='stylesheet', href='stylesheets/css/critical.css')
 
-    link(rel='stylesheet', href='/stylesheets/css/wedding-theme.css')
+    script(src='components/loadcss/loadCSS.js')
+    script.
+      loadCSS('components/angular-motion/dist/angular-motion.min.css')
+      loadCSS('components/blueimp-gallery/css/blueimp-gallery.min.css')
+      loadCSS('styleSheets/css/basic.css')
 
   body
     block body

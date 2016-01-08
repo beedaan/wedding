@@ -1,0 +1,206 @@
+@import "_variables.less";
+@import "_animations.less";
+@import "../../components/bootstrap/less/mixins.less";
+@import "../../components/bootstrap/less/variables.less";
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "TypoPRO Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: white;
+  background-color: @background;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 35px;
+  text-transform: uppercase;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+p {
+  margin: 0 0 25px;
+  font-size: 18px;
+  line-height: 1.5;
+  @media only screen and (min-width: @screen-sm-min) {
+    margin: 0 0 35px;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+}
+
+a {
+  color: @primary;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: darken(@primary, 20%);
+  }
+  &.btn {
+    margin-bottom: 35px;
+  }
+}
+
+.light {
+  font-weight: 400;
+}
+
+.navbar-custom {
+  margin-bottom: 0;
+  border-bottom: 1px solid fade(white, 30%);
+  text-transform: uppercase;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: @background;
+  .navbar-brand {
+    font-weight: 700;
+    &:focus {
+      outline: none;
+    }
+    .navbar-toggle {
+      padding: 4px 6px;
+      font-size: 16px;
+      color: white;
+      &:focus,
+      &:active {
+        outline: none;
+      }
+    }
+  }
+  a {
+    color: white;
+  }
+  .nav {
+    li {
+      a {
+        -webkit-transition: background .3s ease-in-out;
+        -moz-transition: background .3s ease-in-out;
+        transition: background .3s ease-in-out;
+        &:hover {
+          color: fade(white, 80%);
+          outline: none;
+          background-color: transparent;
+        }
+        &:focus,
+        &:active {
+          outline: none;
+          background-color: transparent;
+        }
+      }
+      &.active {
+        outline: none;
+        a {
+          background-color: fade(white, 30%);
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (min-width: @screen-sm-min) {
+    padding: 20px 0;
+    border-bottom: none;
+    letter-spacing: 1px;
+    background: transparent;
+    -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+    -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+    transition: background .5s ease-in-out, padding .5s ease-in-out;
+    &.top-nav-collapse {
+      padding: 0;
+      background: @background;
+      border-bottom: 1px solid fade(white, 30%);
+    }
+  }
+}
+
+#page-top {
+  display: inline;
+}
+
+.intro {
+  display: table;
+  width: 100%;
+  height: auto;
+  padding: 100px 0;
+  text-align: center;
+  color: white;
+  background: @background url(../../images/LHP-22.JPG) no-repeat scroll bottom center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  .intro-body {
+    display: table-cell;
+    vertical-align: middle;
+    .brand-heading {
+      font-size: 40px;
+    }
+    .intro-text {
+      font-size: 18px;
+    }
+  }
+  @media only screen and (min-width: @screen-sm-min) {
+    height: 100%;
+    padding: 0;
+    .intro-body {
+      .brand-heading {
+        font-size: 100px;
+      }
+      .intro-text {
+        font-size: 26px;
+      }
+    }
+  }
+}
+
+.content-section {
+  padding-top: 100px;
+
+  @media only screen and (min-width: @screen-sm-min) {
+    padding-top: 100px;
+    margin-top: 150px;
+  }
+}
+
+.btn {
+  text-transform: uppercase;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  border-radius: 0;
+}
+
+.btn-rsvp {
+  .button-variant(white, transparent, @primary);
+  border-width: 2px;
+  font-size: 17px;
+  font-weight: bold;
+
+  @media (min-width: @screen-sm-min) {
+    border-width: 3px;
+    font-size: 26px;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: white;
+    background: fade(white, 10%);
+  }
+}

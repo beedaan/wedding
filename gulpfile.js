@@ -18,27 +18,18 @@ gulp.task('scripts', function () {
         .pipe(gulp.dest('public/dist/'));
 });
 
-gulp.task('critical-plugins', function () {
+gulp.task('plugins', function () {
     return gulp.src([
             'public/components/angular-animate/angular-animate.min.js',
-            'public/components/angular-strap/dist/angular-strap.min.js'],
-        {base: 'public/components'})
-        .pipe(ngAnnotate())
-        .pipe(uglify())
-        .pipe(concat('critical-plugins.min.js'))
-        .pipe(gulp.dest('public/dist/'));
-});
-
-gulp.task('uncritical-plugins', function () {
-    return gulp.src([
+            'public/components/angular-strap/dist/angular-strap.min.js',
             'public/components/angular-strap/dist/angular-strap.tpl.min.js',
             'public/components/angular-scroll/angular-scroll.min.js',
             'public/components/blueimp-gallery/js/blueimp-gallery.min.js'],
         {base: 'public/components'})
         .pipe(ngAnnotate())
         .pipe(uglify())
-        .pipe(concat('uncritical-plugins.min.js'))
+        .pipe(concat('plugins.min.js'))
         .pipe(gulp.dest('public/dist/'));
 });
 
-gulp.task('default', ['clean', 'scripts', 'critical-plugins', 'uncritical-plugins']);
+gulp.task('default', ['clean', 'scripts', 'plugins']);

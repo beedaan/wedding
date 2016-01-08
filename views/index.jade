@@ -13,7 +13,7 @@ block body
           a(class='navbar-brand', href='#page-top', du-smooth-scroll)
             span.light Kaitlin <i class="fa fa-anchor"></i> Brendan
 
-        div(class='navbar-collapse navbar-right', ng-cloak, bs-collapse-target)
+        div(class='navbar-collapse navbar-right', bs-collapse-target)
           ul(class='nav navbar-nav', bs-scrollspy-list)
             li.hidden
               a(href='#page-top')
@@ -161,7 +161,7 @@ block body
         .col-lg-8.col-lg-offset-2
           h2 Registry
           .registry-links.row
-            ul.list-inline.banner-social-buttons
+            ul.list-inline.button-list
               li
                 a(href='https://www.anthropologie.com/anthro/registry/listing?registryId=YJU4NZY2NTK5'
                   class='btn btn-default btn-lg'
@@ -199,8 +199,7 @@ block body
         a(href='http://landmhewitt.com/', target='_blank') &nbsp;Photos by L. Hewitt
 
     script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js')
-    script(src='dist/critical-plugins.min.js')
-    script(src='dist/uncritical-plugins.min.js')
+    script(src='dist/plugins.min.js')
     script(src='dist/all.min.js')
 
     script.

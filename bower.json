@@ -30,7 +30,8 @@
     "angular-animate": "~1.4.8",
     "montserrat-webfont": "git@github.com:beedaan/montserrat-webfont.git#~1.0.3",
     "angular-scroll": "~1.0.0",
-    "blueimp-gallery": "~2.16.0"
+    "blueimp-gallery": "~2.16.0",
+    "loadcss": "~0.2.4"
   },
   "devDependencies": {
     "angular": "~1.4.8"

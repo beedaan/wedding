@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var ngAnnotate = require('gulp-ng-annotate');
+var rename = require('gulp-rename');
 var del = require('del');
 
 gulp.task('clean', function () {
@@ -32,4 +33,13 @@ gulp.task('plugins', function () {
         .pipe(gulp.dest('public/dist/'));
 });
 
-gulp.task('default', ['clean', 'scripts', 'plugins']);
+gulp.task('minify-loadCSS', function () {
+    return gulp.src('public/components/loadcss/loadCSS.js')
+        .pipe(uglify())
+        .pipe(rename(function (path) {
+            path.basename += '.min';
+        }))
+        .pipe(gulp.dest('public/dist/'))
+});
+
+gulp.task('default', ['clean', 'scripts', 'plugins', 'minify-loadCSS']);

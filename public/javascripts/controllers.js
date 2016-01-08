@@ -67,6 +67,7 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
     }).
     controller('RsvpCtrl', function($scope, $rootScope, $log, weddingFactory) {
 
+        $scope.submitDisabled = false;
         $scope.validated = false;
         $scope.rsvp = {
             'code': "",
@@ -79,6 +80,7 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
             if(!$scope.validated) {
                 $scope.validateRsvpCode();
             } else {
+                $scope.submitDisabled = true;
                 $scope.submitRsvp();
             }
         };

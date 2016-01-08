@@ -22,7 +22,6 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.4.8",
     "bootstrap": "~3.3.6",
     "font-awesome": "~4.5.0",
     "typopro-web": "~3.4.1",
@@ -32,5 +31,8 @@
     "montserrat-webfont": "git@github.com:beedaan/montserrat-webfont.git#~1.0.3",
     "angular-scroll": "~1.0.0",
     "blueimp-gallery": "~2.16.0"
+  },
+  "devDependencies": {
+    "angular": "~1.4.8"
   }
 }

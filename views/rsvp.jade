@@ -58,4 +58,4 @@
                   |  Must regretfully decline
         .modal-footer
           button(type='button', class='btn btn-close', ng-click='$hide()') Close
-          button(type='submit', class='btn btn-submit', ng-disabled='rsvpForm.$invalid') Submit
+          button(type='submit', class='btn btn-submit', ng-disabled='rsvpForm.$invalid || submitDisabled') Submit

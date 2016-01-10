@@ -28,17 +28,14 @@ block body
 
     header.intro
       .intro-body
-        .container
-          .row
-            .col-sm-8.col-sm-offset-2
-              h1.brand-heading Kaitlin&nbsp;& Brendan
-              p.intro-text(style='white-space:pre;')
-                | June 18, 2016
-                | Abino Bay, Ontario, Canada
-              if(enableRsvp=='true')
-                button(class='btn btn-lg btn-rsvp', data-ng-click='openRsvpModal()') RSVP
-              else
-                button(class='btn btn-lg btn-rsvp') RSVP Coming Soon
+        h1.brand-heading Kaitlin&nbsp;&<br>Brendan
+        p.intro-text(style='white-space:pre;')
+          | June 18, 2016
+          | Abino Bay, Ontario, Canada
+        if(enableRsvp=='true')
+          button(class='btn btn-lg btn-rsvp', data-ng-click='openRsvpModal()') RSVP
+        else
+          button(class='btn btn-lg btn-rsvp') RSVP Coming Soon
 
     section(id='our_wedding', class='container content-section text-center', bs-scrollspy)
       .col-lg-8.col-lg-offset-2

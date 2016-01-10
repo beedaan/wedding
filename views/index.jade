@@ -28,41 +28,38 @@ block body
 
     header.intro
       .intro-body
-        .container
-          .row
-            .col-sm-8.col-sm-offset-2
-              h1.brand-heading Kaitlin&nbsp;& Brendan
-              p.intro-text(style='white-space:pre;')
-                | June 18, 2016
-                | Abino Bay, Canada
-              if(enableRsvp=='true')
-                button(class='btn btn-lg btn-rsvp', data-ng-click='openRsvpModal()') RSVP
-              else
-                button(class='btn btn-lg btn-rsvp') RSVP Coming Soon
+        h1.brand-heading Kaitlin&nbsp;&<br>Brendan
+        p.intro-text(style='white-space:pre;')
+          | June 18, 2016
+          | Abino Bay, Ontario, Canada
+        if(enableRsvp=='true')
+          button(class='btn btn-lg btn-rsvp', data-ng-click='openRsvpModal()') RSVP
+        else
+          button(class='btn btn-lg btn-rsvp') RSVP Coming Soon
 
     section(id='our_wedding', class='container content-section text-center', bs-scrollspy)
       .col-lg-8.col-lg-offset-2
         h2 Our Wedding
         p(style='text-align: justify;')
-          | Canada has been a special place for Brendan's family for a long time,
+          | Bay Beach has been a special place for Brendan's family for a long time,
           | and a wedding seemed like the perfect opportunity to introduce one family to the other family’s traditions.
 
         p(style='text-align: justify;')
-          | Brendan's grandmother, Ginger "Gigi" Heussler, spent her childhood in the house where she and her husband,
+          | Brendan's grandmother, Ginger "GG" Heussler, spent her childhood in the house where she and her husband,
           | Bud "Boppa" Heussler, now spend their summers.
-          | Brendan's father also spent his summers in this house, which played a large role in him meeting his wife,
-          | who was across the lake in New York. Keeping with tradition, Brendan and his brother spent time during their summers up "at the lake."
-          | Finally, Brendan brought Kaitlin to the house after they had been dating for 4.5 years.
+          | Brendan's father also spent his summers here, which played a large role in him meeting his wife,
+          | who was across the lake in New York. Keeping with tradition, Brendan and his brother spent time during their summers "at the beach."
+          | Finally, Brendan brought Kaitlin to Bay Beach after they had been dating for 4.5 years.
 
         p(style='text-align: justify;')
           | After getting engaged, Brendan and Kaitlin sought a meaningful place to exchange their vows.
-          | and decided that the Canada house was such a special place to Brendan -- and now Kaitlin --
+          | and decided that Bay Beach was such a special place to Brendan -- and now Kaitlin --
           | that they would invite both families to come together and enjoy everything that it has to offer.
 
         p(style='text-align: justify;')
           | After deciding on the location and picking a reception venue, they also found out that the chapel nearby
           | (where the ceremony will be held) is the same chapel where Brendan, his brother, and his father were all baptized.
-          | Brendan's grandparents still attend this chapel every Sunday during their summers there, and his grandfather sings in the chorus.
+          | Brendan's grandparents still attend this chapel every Sunday during their summers there, and his grandfather sings in the choir.
           | This was the perfect last piece to the puzzle: Brendan and Kaitlin knew that this was where they should be married.
 
         h3 Ceremony
@@ -79,7 +76,7 @@ block body
         h2 Other Events
         h3 Rehearsal Dinner
         p(style='white-space:pre-wrap;')
-          | Friday, June 17 2015
+          | Friday, June 17, 2015
           | Buffalo Yacht Club, Point Abino Station
           | 1007 Point Abino Rd S, Ridgeway, ON L0S 1N0, Canada
         a(
@@ -151,10 +148,10 @@ block body
           p
             | The Canadian side of Niagara Falls is a 20-minute drive from the Clarion Hotel.
             | If you have time (or if you're a gambler!), the world-class attraction is worth a visit.
-          h4 Crystal Beach
+          h4 Bay Beach
           p
-            | If you are a beach goer, then you will be able to enjoy beautiful Crystal Beach.
-            | The Heussler's will have several activities set up at their house including beach volleyball and other beach games.
+            | If you are a beach goer, then you will be able to enjoy beautiful Bay Beach.
+            | Spend the day lounging on the Caribbean rated white sandy beach or go for a swim in the clear, fresh water
 
     section(id='registry', class='container-fluid content-section text-center', bs-scrollspy)
       .row
@@ -184,11 +181,12 @@ block body
                   i.fa.fa-fw.fa-star
                   | Macy's
 
-    footer(class='content-section text-center')
-      .col-lg-8.col-lg-offset-2
-        p If you have any questions, please do not hesitate to contact Brendan<br>
-          | email: <a href='mailto:bheussler@gmail.com?subject=Wedding Question'>bheussler@gmail.com</a><br>
-          | cell: (410) 980-9672
+    footer(class='container-fluid content-section text-center')
+      .row
+        .col-lg-8.col-lg-offset-2
+          p If you have any questions, please do not hesitate to contact Brendan<br>
+            | email: <a href='mailto:bheussler@gmail.com?subject=Wedding Question'>bheussler@gmail.com</a><br>
+            | cell: (410) 980-9672
       #boatLandscape
         img(class='img-responsive', style='width: 100%;', src='images/LHP-120-wide.JPG')
       #boatLandscapeSm

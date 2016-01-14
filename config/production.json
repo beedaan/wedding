@@ -1,0 +1,9 @@
+{
+  "dbUser": "",
+  "dbPass": "",
+  "mongoUrl": "ds039175.mongolab.com",
+  "mongoPort": "39175",
+  "db": "heroku_30bc4jbv",
+  "regKey": "nikothegreat",
+  "enableRsvp": "true"
+}

@@ -1,9 +1,5 @@
 {
-  "dbUser": "",
-  "dbPass": "",
-  "mongoUrl": "",
-  "mongoPort": "",
-  "db": "",
+  "mongoUri": "",
   "regKey": "",
   "enableRsvp": ""
 }

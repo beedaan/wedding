@@ -1,5 +1,5 @@
 {
-  "mongoUri": "MONGO_URI",
+  "mongoUri": "MONGOLAB_URI",
   "regKey": "REG_KEY",
   "enableRsvp": "ENABLE_RSVP"
 }

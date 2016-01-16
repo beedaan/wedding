@@ -1,5 +1,5 @@
 {
-  "mongoUri": "Set with environment variable!",
-  "regKey": "Set with environment variable!",
+  "mongoUri": "",
+  "regKey": "",
   "enableRsvp": "false"
 }

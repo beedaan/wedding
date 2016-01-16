@@ -15,12 +15,7 @@ var api = require('./routes/api');
 var app = express();
 var cacheTime = 86400000*7;
 
-mongoose.connect('mongodb://' +
-    config.dbUser + ':' +
-    config.dbPass + '@' +
-    config.mongoUrl + ":" +
-    config.mongoPort + "/" +
-    config.db);
+mongoose.connect(config.get('mongoUri'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

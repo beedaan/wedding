@@ -6,23 +6,9 @@
             span(aria-hidden='true') &times;
           h4.modal-title.text-center RSVP
         .modal-body
-          .alert.alert-rsvp(ng-if='!validated')
+          .alert.alert-rsvp
             p.text-center Enter the registration key that you received in your invitation.
-          .form-group.row(ng-hide='validated',
-            ng-class="{ 'has-error': (rsvpForm.code.$dirty && rsvpForm.code.$error.required) || rsvpForm.code.$error.invalidKey }")
-            label(for='code', class='col-sm-offset-2 col-sm-3 control-label text-right') Registration Key
-            .col-sm-5
-              input(id='code', name='code', ng-model='rsvp.code',
-                class='form-control',
-                type='text',
-                ng-model-options='{debounce: 500}'
-                ng-change="rsvpForm.code.$setValidity('invalidKey', true)"
-                required)
-              span(class='help-block',
-                ng-show='rsvpForm.code.$dirty && rsvpForm.code.$error.required') Registration key is required
-              span(class='help-block',
-                ng-show='rsvpForm.code.$error.invalidKey') Invalid Registration Key
-          .form-group.row(ng-class="{ 'has-error': rsvpForm.name.$dirty && rsvpForm.name.$error.required }", ng-if='validated')
+          .form-group.row(ng-class="{ 'has-error': rsvpForm.name.$dirty && rsvpForm.name.$error.required }")
             label(for='name', class='col-sm-offset-1 col-sm-3 control-label text-right') Full Name
             .col-sm-6
               input(id='name', name='name', ng-model='rsvp.name',
@@ -32,8 +18,7 @@
                 required)
               span(class='help-block',
                 ng-show='rsvpForm.name.$dirty && rsvpForm.name.$error.required') Your name is required
-          .form-group.row(ng-if='validated',
-            ng-class="{ 'has-error': (rsvpForm.email.$dirty && rsvpForm.email.$error.required) || (rsvpForm.email.$dirty && rsvpForm.email.$invalid)}")
+          .form-group.row( ng-class="{ 'has-error': (rsvpForm.email.$dirty && rsvpForm.email.$error.required) || (rsvpForm.email.$dirty && rsvpForm.email.$invalid)}")
             label(for='email', class='col-sm-offset-1 col-sm-3 control-label text-right') Email
             .col-sm-6
               input(id='email', name='email', ng-model='rsvp.email',
@@ -46,7 +31,7 @@
                 ng-show='rsvpForm.email.$dirty && rsvpForm.email.$error.required') Your email is required
               span(class='help-block',
                 ng-show='rsvpForm.email.$dirty && rsvpForm.email.$invalid && !rsvpForm.email.$error.required') Your email is invalid
-          .form-group.row(ng-if='validated')
+          .form-group.row
             .col-sm-offset-2.col-sm-10
               .btn-group(class='control-label', ng-model='rsvp.attend', bs-radio-group, required)
                 label

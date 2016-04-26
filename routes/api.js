@@ -3,28 +3,24 @@ var service = require('../services/rsvpService');
 var router = express.Router();
 
 /* POST rsvp code */
-router.post('/rsvp/validate', function(req, res) {
-  if(service.isCodeValid(req.body.code)) {
-    res.sendStatus(200);
-  } else {
-    res.status(422).send('Invalid registration key')
-  }
+router.post('/rsvp/validate', function (req, res) {
+    if (service.isCodeValid(req.body.code)) {
+        res.sendStatus(200);
+    } else {
+        res.status(422).send('Invalid registration key')
+    }
 });
 
-router.post('/rsvp/submit', function(req, res) {
-  if(service.isCodeValid(req.body.code)) {
+router.post('/rsvp/submit', function (req, res) {
     try {
-      service.createRsvp(req.body, sendAttendStatus);
+        service.createRsvp(req.body, sendAttendStatus);
     } catch (e) {
-      res.sendStatus(503);
+        res.sendStatus(503);
     }
-  } else {
-    res.status(422).send('Invalid registration key')
-  }
 
-  function sendAttendStatus(attend) {
-    res.status(200).send(attend);
-  }
+    function sendAttendStatus(attend) {
+        res.status(200).send(attend);
+    }
 });
 
 module.exports = router;

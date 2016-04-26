@@ -6,8 +6,10 @@
             span(aria-hidden='true') &times;
           h4.modal-title.text-center RSVP
         .modal-body
-          .alert.alert-rsvp
-            p.text-center You can RSVP through the form below or <br>mail in the attendance card you received.
+          .alert.alert-rsvp.text-center
+            .row
+              .col-sm-offset-2.col-sm-8
+                | You can RSVP through the form below or mail in the attendance card you received with your invitation.
           .form-group.row(ng-class="{ 'has-error': rsvpForm.name.$dirty && rsvpForm.name.$error.required }")
             label(for='name', class='col-sm-offset-1 col-sm-3 control-label text-right') Full Name
             .col-sm-6

@@ -31,7 +31,7 @@ angular.module('weddingApp.controllers', ['weddingApp.services', 'mgcrea.ngStrap
             alertOptions.type = 'success';
         } else if (data === false) {
             alertOptions.title = 'Bummer.';
-            alertOptions.content = "We sorry you can't make it.  Thank you so much for letting us know!";
+            alertOptions.content = "We're sorry you can't make it.  Thank you so much for letting us know!";
             alertOptions.type = 'info';
         }
         $alert(alertOptions);

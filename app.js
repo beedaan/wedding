@@ -27,7 +27,9 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public'), {maxAge: cacheTime}));
+
+// TODO re-enable cache after a week or so
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/partials', partials);

@@ -13,7 +13,6 @@ var partials = require('./routes/partials');
 var api = require('./routes/api');
 
 var app = express();
-var cacheTime = 86400000*7;
 
 mongoose.connect(config.get('mongoUri'));
 
@@ -28,8 +27,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 
-// TODO re-enable cache after a week or so
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), {maxAge: '1d'}));
 
 app.use('/', routes);
 app.use('/partials', partials);

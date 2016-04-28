@@ -1,5 +1,6 @@
 {
   "mongoUri": "",
   "regKey": "",
-  "enableRsvp": "false"
+  "enableRsvp": "false",
+  "smtpUri": ""
 }

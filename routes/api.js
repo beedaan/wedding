@@ -1,5 +1,6 @@
 var express = require('express');
 var service = require('../services/rsvpService');
+var emailService = require('../services/emailService');
 var router = express.Router();
 
 /* POST rsvp code */
@@ -14,6 +15,7 @@ router.post('/rsvp/validate', function (req, res) {
 router.post('/rsvp/submit', function (req, res) {
     try {
         service.createRsvp(req.body, sendAttendStatus);
+        emailService.sendEmail(req.body);
     } catch (e) {
         res.sendStatus(503);
     }

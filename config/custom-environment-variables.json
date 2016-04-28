@@ -1,5 +1,6 @@
 {
   "mongoUri": "MONGOLAB_URI",
   "regKey": "REG_KEY",
-  "enableRsvp": "ENABLE_RSVP"
+  "enableRsvp": "ENABLE_RSVP",
+  "smtpUri": "SMTP_URI"
 }
